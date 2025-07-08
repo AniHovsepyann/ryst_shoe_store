@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: brown;
+}
+
+nav ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-block: 20px;
+}

@@ -1,0 +1,69 @@
+@use "../../sass/colors" as *;
+
+.marquee-container {
+  overflow: hidden;
+  background-color: #000;
+  height: 29px;
+  display: flex;
+  align-items: center;
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-slide 40s linear infinite;
+
+
+    .running-line {
+      display: flex;
+      font-size: 12px;
+      gap: 48px;
+      white-space: nowrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+
+      li {
+        color: $yellow;
+        line-height: 1.2;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+.header-menu {
+  height: 69.47px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding-inline: 24px;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      &.ryst {
+        a {
+          font-size: 24px;
+
+        }
+      }
+
+      &.right {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
