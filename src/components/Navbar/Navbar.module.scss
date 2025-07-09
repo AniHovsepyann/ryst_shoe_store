@@ -53,9 +53,58 @@
       &.right {
         display: flex;
         align-items: center;
+
+        .search {
+          margin-right: 29px;
+          i {
+            font-size: 17px;
+          }
+        }
+
+        .signs {
+          display: flex;
+          gap: 6px;
+          margin-right: 16px;
+
+          i {
+            font-size: 20px;
+          }
+        }
+
+        .buttons {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+
+          a,
+          button {
+            cursor: pointer;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            border-radius: 16px;
+            border: 1px solid #000000;
+            font-size: 12px;
+
+            &.login {
+              width: 120px;
+            }
+
+            &.menu {
+              width: 80px;
+
+            }
+          }
+        }
       }
     }
   }
+}
+
+.active {
+  text-decoration: none !important;
 }
 
 @keyframes marquee-slide {

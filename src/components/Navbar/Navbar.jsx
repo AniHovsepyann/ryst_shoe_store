@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.scss"
-import { NavLink } from 'react-router-dom'
-import { ABOUT, BLOG, HOME, SEARCHRESULTS } from '../../routes'
+import { Link } from 'react-router-dom'
+import { ABOUT, BLOG, HOME, LOGIN, SEARCHRESULTS } from '../../routes'
 
 export default function Navbar() {
   return (
@@ -26,22 +26,26 @@ export default function Navbar() {
       <nav className={styles["header-menu"]}>
         <ul>
           <li className={styles.ryst}>
-            <NavLink to={HOME}>Ryst.</NavLink>
+            <Link to={HOME}>Ryst.</Link>
           </li>
           <li className={styles["right"]}>
-            <div className="search">
-              <NavLink to={SEARCHRESULTS}>
+            <div className={styles.search}>
+              <Link to={SEARCHRESULTS}>
                 <i className="bi bi-search"></i>
-              </NavLink>
+              </Link>
             </div>
-            <div className="signs">
-              
+            <div className={styles.signs}>
+              <i className="bi bi-heart"></i>
+              <i className="bi bi-cart"></i>
             </div>
-            <div className="buttons"></div>
-            <NavLink to={ABOUT}>ABOUT</NavLink>
+            <div className={styles.buttons}>
+              <Link to={LOGIN} className={styles.login}>LOG IN</Link>
+              <button className={styles.menu}>MENU</button>
+            </div>
+            {/* <Link to={ABOUT}>ABOUT</Link> */}
           </li>
           {/* <li>
-            <NavLink to={BLOG}>BLOG</NavLink>
+            <Link to={BLOG}>BLOG</Link>
           </li> */}
         </ul>
       </nav>

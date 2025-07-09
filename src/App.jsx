@@ -1,10 +1,10 @@
 import './App.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import { ABOUT, BLOG, ERRORPAGE, HOME, SEARCHRESULTS } from './routes'
+import { ABOUT, BLOG, ERRORPAGE, HOME, LOGIN, SEARCHRESULTS, SHOPNOW } from './routes'
 // import About, { getPosts } from './pages/About/About'
 import Layouts from './components/Layouts/Layouts'
 import Post, { getSpeacialPost } from './pages/Post/Post'
-import { About, Blog, ErrorPage, Home, SearchResults } from './pages'
+import { About, Blog, ErrorPage, Home, Login, SearchResults, ShopNow } from './pages'
 import { getPosts } from './pages/About/About'
 
 const router = createBrowserRouter(
@@ -15,6 +15,8 @@ const router = createBrowserRouter(
       <Route element={<Blog/>} path={BLOG}/>
       <Route element={<Post/>} path={`${ABOUT}/:id`} loader={getSpeacialPost}/>
       <Route element={<ErrorPage/>} path={ERRORPAGE}/>
+      <Route element={<Login/>} path={LOGIN}/>
+      <Route element={<ShopNow/>} path={SHOPNOW}/>
       <Route element={<SearchResults/>} path={SEARCHRESULTS}/>
     </Route>
   )

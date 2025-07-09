@@ -20,3 +20,6 @@ nav ul {
   justify-content: space-between;
   margin-block: 20px;
 }
+html {
+  scroll-behavior: smooth;
+}

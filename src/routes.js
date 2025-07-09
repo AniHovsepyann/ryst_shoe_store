@@ -3,7 +3,9 @@ const ROUTES = {
   ABOUT: '/about',
   BLOG: '/blog',
   SEARCHRESULTS: "/searchresults",
+  LOGIN: "/login",
+  SHOPNOW: "/shopnow",
   ERRORPAGE: '*',
 }
 
-export const {HOME, ABOUT, BLOG, ERRORPAGE, SEARCHRESULTS} = ROUTES
+export const {HOME, ABOUT, BLOG, ERRORPAGE, SEARCHRESULTS, LOGIN, SHOPNOW} = ROUTES
