@@ -1,35 +1,67 @@
 import { useEffect, useRef } from "react";
 import styles from "./HeroSection.module.scss"
 import { NavLink } from "react-router-dom";
-import { SHOPNOW } from "../../../routes";
+import { PRODUCT, SHOPNOW } from "../../../routes";
 
 export default function HeroSection() {
-  const sectionRef = useRef(null)
-
+  // const sectionRef = useRef(null)
   useEffect(() => {
+    const section = sectionRef.current;
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const offset = scrollY * 0.05; // շատ փոքր շարժում
-      sectionRef.current.style.backgroundPosition = `center ${-offset}px`;
-
+      const offset = scrollY * 0.3; // կարգավորի՝ որքան ուժեղ շարժվի նկարը
+      section.style.backgroundPosition = `center calc(50% - ${offset}px)`;
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-
   }, []);
+  const sectionRef = useRef(null);
+  const left_topRef = useRef(null);
+
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   const left_top = left_topRef.current;
+
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const offset = scrollY * 0.05; // ✅ նույնը երկուսի համար
+
+  //     section.style.backgroundPosition = `center calc(50% - ${offset}px)`;
+  //     // left_top.style.transform = `translateY(${offset}px)`; // 👈 նույն թափով շարժ
+  //     left_top.style.transform = `translateY(calc(-50% + ${offset}px))`;
+
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
   return (
     <section ref={sectionRef} className={styles["hero-section"]}>
-      <div className={styles["left-top"]}>
+      <div ref={left_topRef} className={styles["left-top"]}>
         <h2>Step-up Your Stride</h2>
         <p>Premium Athletic Footwear</p>
         <NavLink to={SHOPNOW}>SHOP NOW</NavLink>
       </div>
       <div className={styles['right-bottom']}>
-        <div className={styles["img-container"]}>
+        <NavLink to={PRODUCT} className={styles["img-container"]}>
+          <button className={styles.sale}>SALE</button>
           <img src="https://static.wixstatic.com/media/c837a6_f4b16c06d8b5449c954a72eb34be2b4b~mv2.jpg/v1/fill/w_347,h_260,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_f4b16c06d8b5449c954a72eb34be2b4b~mv2.jpg" alt="shoe" />
+        </NavLink>
+        <div className={styles["product-data"]}>
+          <NavLink to={PRODUCT} className={styles["name-and-price"]}>
+            <h4>MARATHON MASTER</h4>
+            <span className={styles["price-pt"]}>
+              <ins>$140.00</ins>
+              <del>$160.00</del>
+            </span>
+          </NavLink>
+          <button className={styles.add}>
+            ADD TO CART
+          </button>
         </div>
-        <div className={styles["product-data"]}></div>
       </div>
     </section>
   )
