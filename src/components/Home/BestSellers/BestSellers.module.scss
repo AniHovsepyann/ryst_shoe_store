@@ -1,0 +1,69 @@
+@use "../../../sass/mixins" as *;
+
+.Best-sellers {
+  margin-bottom: 140px;
+  padding: 24px;
+
+  .lil-section-name {
+    padding-block: 112px 32px;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {}
+
+    button {
+      @include button-fromtransparent-to-yellowblack(12px);
+    }
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    .product {
+      display: flex;
+      flex-direction: column;
+
+      .img-container {
+        position: relative;
+        width: 449.5px;
+        height: 599px;
+
+        img {
+          @include showSecondImageHover;
+        }
+
+        button {
+          @include sale(rgba(255, 255, 255, 1));
+
+        }
+      }
+
+      .name-price {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding-top: 16px;
+
+        h3 {
+          font-size: 12px;
+        }
+
+        .price-pt {
+          font-size: 14px;
+
+          ins {
+            text-decoration: none;
+          }
+
+          del {
+            color: #808080;
+
+          }
+        }
+      }
+    }
+  }
+
+}
