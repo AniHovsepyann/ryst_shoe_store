@@ -10,30 +10,30 @@ export default function KidsOff() {
   const sectionRef = useRef(null);
   useEffect(() => {
     const section = sectionRef.current;
-
     if (!section) return;
+
+    let lastScrollY = window.scrollY;
+    let currentOffset = -10; // Սկզբնական բարձրություն
+    const movementRange = 30; // Max px շարժ
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const windowHeight = window.innerHeight;
+      const delta = scrollY - lastScrollY;
 
-      const distanceFromView = scrollY + windowHeight - sectionTop;
-      const scrollProgress = distanceFromView / (sectionHeight + windowHeight);
+      // scroll down → positive delta → նկարը իջնի
+      // scroll up → negative delta → նկարը բարձրանա
+      currentOffset += delta * 0.2; // speed factor
 
-      // համաչափ շարժման կարգավորում
-      const movementRange = 30;           // որքան շարժվի max
-      const neutralBase = -10;            // կես scroll-ի պահին ֆիքսված դիրք
-      const movement = (scrollProgress - 0.5) * movementRange;
-
-      const finalPosition = neutralBase + movement;
+      // սահմանափակում, որ չփախնի
+      currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
 
       section.style.setProperty(
         'background-position',
-        `center ${finalPosition}px`,
+        `center ${currentOffset}px`,
         'important'
       );
+
+      lastScrollY = scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
