@@ -83,78 +83,121 @@
 }
 
 @mixin floatingBackgroundedSection($background_pos2) {
-    width: 100%;
-    min-height: 840px;
-    // background-image: url("/images/hero_section.avif");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center $background_pos2;
-    // background-color: red;
+  width: 100%;
+  min-height: 840px;
+  // background-image: url("/images/hero_section.avif");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center $background_pos2;
+  // background-color: red;
 
+  display: flex;
+  padding: 64px 93px 80px 24px;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .left-top {
+    @include section-top-left-div;
+  }
+
+  .right-bottom {
+    align-self: flex-end;
+    width: 514px;
+    height: 277.391px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
     display: flex;
-    padding: 64px 93px 80px 24px;
-    flex-direction: column;
-    justify-content: space-between;
 
-    .left-top {
-      @include section-top-left-div;
+    .img-container {
+      flex-shrink: 0;
+      height: 100%;
+      width: 347px;
+      position: relative;
+
+      img {
+        @include showSecondImageHover;
+      }
+
+      .sale {
+        @include sale(colors.$yellow);
+      }
     }
 
-    .right-bottom {
-      align-self: flex-end;
-      width: 514px;
-      height: 277.391px;
-      border-radius: 5px;
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 8px;
+    .product-data {
+      padding: 16px;
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      .img-container {
-        flex-shrink: 0;
-        height: 100%;
-        width: 347px;
-        position: relative;
+      .name-and-price {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
 
-        img {
-          @include showSecondImageHover;
-        }
+        h4 {}
 
-        .sale {
-          @include sale(colors.$yellow);
+        .price-pt {
+          display: flex;
+          gap: 4px;
+
+          ins {
+            text-decoration: none;
+          }
+
+          del {
+            color: #808080;
+          }
         }
       }
 
-      .product-data {
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .name-and-price {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-
-          h4 {}
-
-          .price-pt {
-            display: flex;
-            gap: 4px;
-
-            ins {
-              text-decoration: none;
-            }
-
-            del {
-              color: #808080;
-            }
-          }
-        }
-
-        .add {
-          @include button-fromtransparent-to-yellowblack(16px);
-        }
+      .add {
+        @include button-fromtransparent-to-yellowblack(16px);
       }
     }
   }
+}
+
+@mixin marquee-container-style($height, $color, $fz) {
+  overflow: hidden;
+  background-color: #000;
+  height: $height;
+  display: flex;
+  align-items: center;
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-slide 40s linear infinite;
+
+
+    .running-line {
+      margin-inline: 48px;
+      display: flex;
+      font-size: $fz;
+      gap: 48px;
+      white-space: nowrap;
+      // list-style: none;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+
+      li {
+        color: $color;
+        line-height: 1.2;
+        flex-shrink: 0;
+      }
+    }
+  }
+}
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

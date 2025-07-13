@@ -1,35 +1,8 @@
-@use "../../sass/colors" as *;
+@use "../../sass/colors" as colors;
+@use "../../sass/mixins" as *;
 
 .marquee-container {
-  overflow: hidden;
-  background-color: #000;
-  height: 29px;
-  display: flex;
-  align-items: center;
-
-  .marquee-track {
-    display: flex;
-    width: max-content;
-    animation: marquee-slide 40s linear infinite;
-
-
-    .running-line {
-      display: flex;
-      font-size: 12px;
-      gap: 48px;
-      white-space: nowrap;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-
-      li {
-        color: $yellow;
-        line-height: 1.2;
-        flex-shrink: 0;
-      }
-    }
-  }
+  @include marquee-container-style(29px, colors.$yellow, 12px);
 }
 
 .header-menu {
@@ -56,6 +29,7 @@
 
         .search {
           margin-right: 29px;
+
           i {
             font-size: 17px;
           }
@@ -105,14 +79,4 @@
 
 .active {
   text-decoration: none !important;
-}
-
-@keyframes marquee-slide {
-  0% {
-    transform: translateX(-50%);
-  }
-
-  100% {
-    transform: translateX(0%);
-  }
 }
