@@ -173,20 +173,21 @@
 
 
     .running-line {
-      margin-inline: 48px;
       display: flex;
       font-size: $fz;
       gap: 48px;
       white-space: nowrap;
       // list-style: none;
-      margin: 0;
+      // margin: 0;
       padding: 0;
       align-items: center;
+      margin-inline: 24px;
 
       li {
         color: $color;
         line-height: 1.2;
         flex-shrink: 0;
+      
       }
     }
   }

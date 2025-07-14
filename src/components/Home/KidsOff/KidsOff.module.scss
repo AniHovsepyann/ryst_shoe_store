@@ -11,8 +11,33 @@ section {
 
   .marquee-container {
     @include marquee-container-style(64px, #fff, 24px);
-    .running-line{
-      list-style-image: url("/icons/blue-star-icon.svg");
+
+    .marquee-track {
+      .running-line {
+        gap: 24px;
+        margin-inline: 12px;
+
+        // list-style-image: url("/icons/blue-star-icon.svg");
+        li {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+
+          flex-grow: 1;
+          justify-content: space-between;
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 40.31px;
+            height: 40.31px;
+            mask: url('/icons/blue-star-icon.svg') no-repeat center;
+            mask-size: contain;
+            background-color: #338FFF;
+          }
+        }
+      }
+
     }
   }
 }
