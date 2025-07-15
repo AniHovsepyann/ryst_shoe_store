@@ -2,18 +2,10 @@
 
 .Best-sellers {
   margin-bottom: 140px;
-  padding: 24px;
+  padding-inline: 24px;
 
   .lil-section-name {
-    padding-block: 112px 32px;
-    display: flex;
-    justify-content: space-between;
-
-    h2 {}
-
-    button {
-      @include button-fromtransparent-to-yellowblack(12px);
-    }
+    @include lil-section-name;
   }
 
   .products {

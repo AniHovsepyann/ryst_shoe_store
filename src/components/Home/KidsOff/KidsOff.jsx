@@ -20,11 +20,19 @@ export default function KidsOff() {
       const scrollY = window.scrollY;
       const delta = scrollY - lastScrollY;
 
-      // scroll down → positive delta → նկարը իջնի
-      // scroll up → negative delta → նկարը բարձրանա
-      currentOffset += delta * 0.2; // speed factor
+      const rect = section.getBoundingClientRect();
 
-      // սահմանափակում, որ չփախնի
+      // scroll down → միշտ շարժվի
+      if (delta > 0) {
+        currentOffset += delta * 0.4;
+      }
+
+      // scroll up → շարժվի միայն եթե ներքևը >= window.innerHeight
+      if (delta < 0 && rect.bottom >= window.innerHeight) {
+        currentOffset += delta * 0.05;
+      }
+
+      // սահմանափակում
       currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
 
       section.style.setProperty(
@@ -35,6 +43,8 @@ export default function KidsOff() {
 
       lastScrollY = scrollY;
     };
+
+
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();

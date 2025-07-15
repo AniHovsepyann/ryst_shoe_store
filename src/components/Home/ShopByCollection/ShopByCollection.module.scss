@@ -1,0 +1,35 @@
+@use "../../../sass/mixins" as *;
+
+section.ShopByCollection {
+  margin-bottom: 120px;
+  padding-inline: 24px;
+
+  .lil-section-name {
+    @include lil-section-name;
+  }
+
+  .collections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+
+    .each {
+      height: 520px;
+      position: relative;
+      overflow: hidden;
+
+      a {
+        @include button-fromtransparent-to-yellowblack(12px);
+        position: absolute;
+        left: 24px;
+        bottom: 24px;
+        z-index: 2;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom"
 import styles from "./BestSellers.module.scss"
-import { PRODUCT } from "../../../routes"
+import { PRODUCT, SHOPNOW } from "../../../routes"
 
 export default function BestSellers() {
   return (
     <section className={styles["Best-sellers"]}>
       <div className={styles["lil-section-name"]}>
         <h2>BEST SELLERS</h2>
-        <button>VIEW ALL</button>
+        <NavLink to={SHOPNOW}>VIEW ALL</NavLink>
       </div>
       <div className={styles.products}>
         <div className={styles.product}>
