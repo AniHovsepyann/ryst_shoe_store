@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
-import styles from "./KidsOff.module.scss"
+import styles from "./Sustainability.module.scss"
 import { NavLink } from "react-router-dom";
-import { PRODUCT, SHOPNOW } from "../../../routes";
+import { ABOUTUS, PRODUCT, SHOPNOW } from "../../../routes";
 import FloatingBackgroundSection from '../../ui/FloatingBackgroundSection/FloatingBackgroundSection'
 
 
-export default function KidsOff() {
+export default function Sustainability() {
   const left_topRef = useRef(null);
   const sectionRef = useRef(null);
   useEffect(() => {
@@ -53,20 +53,17 @@ export default function KidsOff() {
 
   return (
     // <FloatingBackgroundSection sectionRef={sectionRef} parentStyles={styles} image_1={"https://static.wixstatic.com/media/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg/v1/fill/w_347,h_260,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg"}/>
-    <section>
       <div ref={sectionRef} className={`${styles["floating-background-section"]} ${styles["floating-background-section"]}`}>
         <div ref={left_topRef} className={styles["left-top"]}>
-          <h2>Step-up Your Stride</h2>
-          <p>Premium Athletic Footwear</p>
-          <NavLink to={SHOPNOW}>SHOP NOW</NavLink>
+          <h2>Committed to Sustainability</h2>
         </div>
         <div className={styles['right-bottom']}>
-          <NavLink to={PRODUCT} className={styles["img-container"]}>
+          {/* <NavLink to={PRODUCT} className={styles["img-container"]}>
             <button className={styles.sale}>SALE</button>
             <img className={styles["image-1"]} src={"https://static.wixstatic.com/media/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg/v1/fill/w_347,h_260,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg"} alt="shoe" />
             <img className={styles["image-2"]} src="https://static.wixstatic.com/media/c837a6_60f18667fe64458eb7ab6a131d3354d4~mv2.jpg/v1/fill/w_347,h_260,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_60f18667fe64458eb7ab6a131d3354d4~mv2.jpg" alt="shoe" />
-          </NavLink>
-          <div className={styles["product-data"]}>
+          </NavLink> */}
+          {/* <div className={styles["product-data"]}>
             <NavLink to={PRODUCT} className={styles["name-and-price"]}>
               <h4>MARATHON MASTER</h4>
               <span className={styles["price-pt"]}>
@@ -77,27 +74,13 @@ export default function KidsOff() {
             <button className={styles.add}>
               ADD TO CART
             </button>
+          </div> */}
+          <div className={styles.text}>
+            <h4>WALK WITH US TOWARDS A GREENER PLANET, ONE STEP AT A TIME</h4>
+            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.</p>
           </div>
+          <NavLink to={ABOUTUS}>READ MORE</NavLink>
         </div>
       </div>
-      <div className={styles["marquee-container"]}>
-        <div className={styles["marquee-track"]}>
-          <ul className={styles["running-line"]}>
-            {
-              Array(7).fill().map((_, i) => (
-                <li key={`1-${i}`}>NEW ENERGY, SAME HIGH QUALITY</li>
-              ))
-            }
-          </ul>
-          <ul className={styles["running-line"]}>
-            {
-              Array(7).fill().map((_, i) => (
-                <li key={`2-${i}`}>NEW ENERGY, SAME HIGH QUALITY</li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-    </section>
   )
 }

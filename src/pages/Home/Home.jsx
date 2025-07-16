@@ -4,6 +4,8 @@ import HeroSection from '../../components/Home/HeroSection/HeroSection';
 import BestSellers from '../../components/Home/BestSellers/BestSellers';
 import KidsOff from '../../components/Home/KidsOff/KidsOff';
 import ShopByCollection from '../../components/Home/ShopByCollection/ShopByCollection';
+import Sustainability from '../../components/Home/Sustainability/Sustainability';
+import CustomerReviews from '../../components/Home/CustomerReviews/CustomerReviews';
 
 export default function Home() {
   console.log(useState(5));
@@ -14,7 +16,9 @@ export default function Home() {
       <BestSellers />
       <KidsOff />
       <ShopByCollection />
-      <div style={{ height: "5000px", width: "20px" }}></div>
+      <Sustainability />
+      <CustomerReviews />
+      {/* <div style={{ height: "5000px", width: "20px" }}></div> */}
     </>
   )
 }

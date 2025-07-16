@@ -1,0 +1,78 @@
+@use "../../../sass/mixins" as *;
+@use "../../../sass/colors" as colors;
+
+.floating-background-section {
+  background-image: url("https://static.wixstatic.com/media/c837a6_6b04b65869124042a744e4d732b75473~mv2.jpg/v1/fill/w_1920,h_880,al_b,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_6b04b65869124042a744e4d732b75473~mv2.jpg");
+  width: 100%;
+  min-height: 840px;
+  // background-image: url("/images/hero_section.avif");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center -10px;
+  // background-color: red;
+
+  display: flex;
+  padding: 64px 93px 80px 24px;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .left-top {
+    h2 {
+      font-size: 92px;
+      margin-bottom: 66px;
+      max-width: 770px;
+    }
+  }
+
+  .right-bottom {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    // gap: 19px;
+    border-radius: 5px;
+    background-color: #00000080;
+    width: 400px;
+    height: 277.59px;
+    padding: 27px 20px 23px;
+    justify-content: space-between;
+
+
+    .text {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      h4 {
+        font-size: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5em;
+        letter-spacing: 0em;
+      }
+    }
+
+    a {
+      background-color: transparent;
+      border-radius: 100px;
+      font-size: 12px;
+      border: 1px solid rgb(191, 191, 191);
+      color: #fff;
+      width: 120px;
+      height: 38px;
+      display: grid;
+      place-content: center;
+
+      &:hover {
+        background-color: colors.$yellow;
+        border: none;
+        color: #000000;
+      }
+    }
+  }
+
+}

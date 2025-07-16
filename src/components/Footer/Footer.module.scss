@@ -1,0 +1,120 @@
+@use "../../sass/colors" as colors;
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+  background-color: #000;
+  align-items: end;
+
+  .top {
+    height: 80.2px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-inline: 24px;
+
+    a {
+      font-size: 24px;
+      color: #fff;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 49px;
+    width: 50%;
+
+    .yellow {
+      padding: 32px 25px 21px;
+      background-color: colors.$yellow;
+
+      p.yellow-header {
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .field {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          label {
+            font-size: 12px;
+          }
+
+          input {
+            font-size: 16px;
+            padding: 8px 12px;
+            background-color: transparent;
+            border-radius: 6px;
+            border: 1px solid #000;
+            height: 42px;
+          }
+        }
+
+        .bottom {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          .confirm {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .input-label {
+              display: flex;
+              gap: 12px;
+              align-items: center;
+
+              input[type="checkbox"] {
+                border-radius: 0;
+                accent-color: colors.$yellow;
+              }
+
+              label {
+                font-size: 14px;
+              }
+            }
+
+            .error-message {}
+          }
+
+          input[type="submit"] {
+            background-color: transparent;
+            border: 1px solid #000;
+            width: 278.67px;
+            height: 38.39px;
+            font-size: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #000;
+              color: colors.$yellow;
+            }
+          }
+        }
+      }
+    }
+
+    .black {}
+  }
+
+  .bottom {
+    width: 50%;
+    height: 143.203;
+    padding-bottom: 40px;
+
+    p {
+      color: #fff;
+    }
+  }
+}
