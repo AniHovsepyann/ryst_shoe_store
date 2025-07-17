@@ -4,9 +4,6 @@ import { ABOUT } from '../../routes';
 import axios from 'axios';
 
 export default function Post() {
-// console.log(useLoaderData());
-
-
   return (
     <>
       <p>Post {useParams().id}</p>
@@ -22,7 +19,5 @@ export default function Post() {
 }
 
 export const getSpeacialPost = async ({ params: { id } }, b) => {
-  // console.log(a, b);
-
   return (await axios(`https://jsonplaceholder.typicode.com/posts/${id}`)).data
 }

@@ -8,8 +8,6 @@ import Sustainability from '../../components/Home/Sustainability/Sustainability'
 import CustomerReviews from '../../components/Home/CustomerReviews/CustomerReviews';
 
 export default function Home() {
-  console.log(useState(5));
-
   return (
     <>
       <HeroSection />
@@ -18,7 +16,6 @@ export default function Home() {
       <ShopByCollection />
       <Sustainability />
       <CustomerReviews />
-      {/* <div style={{ height: "5000px", width: "20px" }}></div> */}
     </>
   )
 }
