@@ -3,19 +3,19 @@
 footer {
   display: flex;
   flex-direction: column;
-  padding-top: 24px;
+  padding-top: 1.25vw;
   background-color: #000;
   align-items: end;
 
   .top {
-    height: 80.2px;
+    height: 4.177083333333333vw;
     display: flex;
     align-items: center;
     width: 100%;
-    padding-inline: 24px;
+    padding-inline: 1.25vw;
 
     a {
-      font-size: 24px;
+      font-size: 1.25vw;
       color: #fff;
     }
   }
@@ -23,45 +23,46 @@ footer {
   .content {
     display: flex;
     flex-direction: column;
-    gap: 49px;
+    gap: 2.552083333333333vw;
     width: 50%;
 
     .yellow {
-      padding: 32px 25px 21px;
+      margin-right: 1.25vw;
+      padding: 1.6666vw 1.302083vw 1.09375vw;
       background-color: colors.$yellow;
-      border-radius: 5px;
+      border-radius: 0.2604166vw;
 
       p.yellow-header {
-        font-size: 20px;
-        margin-bottom: 40px;
+        font-size: 1.041666vw;
+        margin-bottom: 2.083333vw;
       }
 
       form {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 1.25vw;
 
         .error-message {
           color: #000;
-          font-size: 14px;
+          font-size: 0.729167vw;
         }
 
         .field {
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 0.416667vw;
 
           label {
-            font-size: 12px;
+            font-size: 0.625vw;
           }
 
           input {
-            font-size: 16px;
-            padding: 8px 12px;
+            font-size: 0.833333vw;
+            padding: 0.416667vw 0.625vw;
             background-color: transparent;
-            border-radius: 6px;
-            border: 1px solid #000;
-            height: 42px;
+            border-radius: 0.3125vw;
+            border: 0.052083vw solid #000;
+            height: 2.1875vw;
 
             &:focus {
               outline: none;
@@ -78,29 +79,31 @@ footer {
           .confirm {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 0.416667vw;
 
             .input-label {
               display: flex;
-              gap: 12px;
+              gap: 0.625vw;
               align-items: center;
 
               input[type="checkbox"] {
+                cursor: pointer;
                 border-radius: 0;
                 accent-color: colors.$yellow;
-                width: 16px;
-                height: 16px;
-                border: 1px solid #000;
+                width: 0.833333vw;
+                height: 0.833333vw;
+                border: 0.052083vw solid #000;
 
                 &:checked {
-                  border: 1px solid #000;
+                  border: 0.052083vw solid #000;
                   outline: 0;
                 }
               }
 
               label {
+                cursor: pointer;
                 line-height: 1.3em;
-                font-size: 14px;
+                font-size: 0.729167vw;
               }
             }
 
@@ -108,11 +111,11 @@ footer {
 
           input[type="submit"] {
             background-color: transparent;
-            border: 1px solid #000;
-            width: 278.67px;
-            height: 38.39px;
-            font-size: 12px;
-            border-radius: 6px;
+            border: 0.052083vw solid #000;
+            width: 14.514062vw;
+            height: 1.999479vw;
+            font-size: 0.625vw;
+            border-radius: 0.3125vw;
             cursor: pointer;
 
             &:hover {
@@ -125,17 +128,58 @@ footer {
     }
 
     .black {
-      
+      width: 100%;
+      margin: 0 -0.625vw 4.010417vw;
+
+      table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0.625vw 0.416667vw;
+
+        td,
+        th {
+          border: 0.052083vw solid #fff;
+          border-radius: 0.2604166vw;
+          height: 1.5vw;
+          padding-inline: 1.25vw;
+        }
+
+        thead {
+          th {
+            background-color: #fff;
+            font-size: 0.625vw;
+          }
+        }
+
+        tbody {
+          td, a {
+            color: #fff;
+            font-size: 0.729167vw;
+
+            &.white {
+              background-color: #fff;
+              color: #000;
+              font-size: 0.625vw;
+            }
+          }
+        }
+      }
     }
   }
 
   .end {
     width: 50%;
     height: 143.203;
-    padding-bottom: 40px;
+    padding-bottom: 2.083333vw;
 
-    p {
+    p,
+    a {
       color: #fff;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 }

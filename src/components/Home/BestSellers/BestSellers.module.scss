@@ -1,8 +1,8 @@
 @use "../../../sass/mixins" as *;
 
 .Best-sellers {
-  margin-bottom: 140px;
-  padding-inline: 24px;
+  margin-bottom: 7.291667vw;
+  padding-inline: 1.25vw;
 
   .lil-section-name {
     @include lil-section-name;
@@ -11,7 +11,7 @@
   .products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 1.25vw;
 
     .product {
       display: flex;
@@ -19,8 +19,8 @@
 
       .img-container {
         position: relative;
-        width: 449.5px;
-        height: 599px;
+        width: 23.411458vw;
+        height: 31.197917vw;
 
         img {
           @include showSecondImageHover;
@@ -35,15 +35,15 @@
       .name-price {
         display: flex;
         flex-direction: column;
-        gap: 4px;
-        padding-top: 16px;
+        gap: 0.208333vw;
+        padding-top: 0.833333vw;
 
         h3 {
-          font-size: 12px;
+          font-size: 0.625vw;
         }
 
         .price-pt {
-          font-size: 14px;
+          font-size: 0.729167vw;
 
           ins {
             text-decoration: none;

@@ -1,8 +1,8 @@
 @use "../../../sass/mixins" as *;
 
 section.ShopByCollection {
-  margin-bottom: 120px;
-  padding-inline: 24px;
+  margin-bottom: 6.25vw;
+  padding-inline: 1.25vw;
 
   .lil-section-name {
     @include lil-section-name;
@@ -11,18 +11,18 @@ section.ShopByCollection {
   .collections {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 0.625vw;
 
     .each {
-      height: 520px;
+      height: 27.083333vw;
       position: relative;
       overflow: hidden;
 
       a {
-        @include button-fromtransparent-to-yellowblack(12px);
+        @include button-fromtransparent-to-yellowblack(0.625vw);
         position: absolute;
-        left: 24px;
-        bottom: 24px;
+        left: 1.25vw;
+        bottom: 1.25vw;
         z-index: 2;
       }
 

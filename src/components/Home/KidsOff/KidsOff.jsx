@@ -8,40 +8,76 @@ import FloatingBackgroundSection from '../../ui/FloatingBackgroundSection/Floati
 export default function KidsOff() {
   const left_topRef = useRef(null);
   const sectionRef = useRef(null);
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   if (!section) return;
+
+  //   let lastScrollY = window.scrollY;
+  //   let currentOffset = -10; // Սկզբնական բարձրություն
+  //   const movementRange = 30; // Max px շարժ
+
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const delta = scrollY - lastScrollY;
+
+  //     const rect = section.getBoundingClientRect();
+
+  //     // scroll down → միշտ շարժվի
+  //     if (delta > 0) {
+  //       currentOffset += delta * 0.4;
+  //     }
+
+  //     // scroll up → շարժվի միայն եթե ներքևը >= window.innerHeight
+  //     if (delta < 0 && rect.bottom >= window.innerHeight) {
+  //       currentOffset += delta * 0.05;
+  //     }
+
+  //     // սահմանափակում
+  //     currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
+
+  //     section.style.setProperty(
+  //       'background-position',
+  //       `center ${currentOffset}px`,
+  //       'important'
+  //     );
+
+  //     lastScrollY = scrollY;
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll();
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
-    let lastScrollY = window.scrollY;
-    let currentOffset = -10; // Սկզբնական բարձրություն
-    const movementRange = 30; // Max px շարժ
+    // background image-ի approximate բարձրությունը px-ով (պիտի ճշգրտես ըստ քո նկարի)
+    const imageHeight = 400; // փոխիր իրական չափով
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const delta = scrollY - lastScrollY;
-
       const rect = section.getBoundingClientRect();
 
-      // scroll down → միշտ շարժվի
-      if (delta > 0) {
-        currentOffset += delta * 0.4;
+      // current background-position-y-ը ստանալու համար, կվերծանենք inline style-ից
+      const bgPosition = window.getComputedStyle(section).backgroundPosition.split(" ");
+      const bgPosY = bgPosition.length > 1 ? parseFloat(bgPosition[1]) : 0;
+
+      // background image-ի վերևի պոզիցիան (relative to viewport)
+      const bgTop = rect.top + bgPosY;
+
+      // background image-ի ստորին պոզիցիան
+      const bgBottom = bgTop + imageHeight;
+
+      // floating-background-section-ի ստորին պոզիցիան
+      const sectionBottom = rect.bottom;
+
+      console.log("Background image bottom:", bgBottom);
+      console.log("Floating-background-section bottom:", sectionBottom);
+      if (bgBottom === sectionBottom) {
+        console.log("equal");
       }
-
-      // scroll up → շարժվի միայն եթե ներքևը >= window.innerHeight
-      if (delta < 0 && rect.bottom >= window.innerHeight) {
-        currentOffset += delta * 0.05;
-      }
-
-      // սահմանափակում
-      currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
-
-      section.style.setProperty(
-        'background-position',
-        `center ${currentOffset}px`,
-        'important'
-      );
-
-      lastScrollY = scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -49,7 +85,6 @@ export default function KidsOff() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   return (
     // <FloatingBackgroundSection sectionRef={sectionRef} parentStyles={styles} image_1={"https://static.wixstatic.com/media/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg/v1/fill/w_347,h_260,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg"}/>

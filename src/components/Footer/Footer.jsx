@@ -49,7 +49,46 @@ export default function Footer() {
             </Form>
           </Formik>
         </div>
-        <div className={styles.black}></div>
+        <div className={styles.black}>
+          <table>
+            <thead>
+              <tr>
+                <th colSpan={3}>CONTACT</th>
+                <th colSpan={3}>LEGAL</th>
+                <th colSpan={3}>SHOP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colSpan={3}>info@mysite.com</td>
+                <td colSpan={3}>Terms & Conditions</td>
+                <td colSpan={3}>All Products</td>
+              </tr>
+              <tr>
+                <td colSpan={3}>123-456-7890</td>
+                <td colSpan={3}>Privacy Policy</td>
+                <td colSpan={3}>Best Sellers</td>
+              </tr>
+              <tr>
+                <td colSpan={3}>500 Terry Francine St.SA, CA 9415</td>
+                <td colSpan={3}>Shipping Policy</td>
+                <td colSpan={3}>Performance Series</td>
+              </tr>
+              <tr>
+                <td className={styles.white} colSpan={3}>SOCIAL MEDIA</td>
+                <td colSpan={3}>Refund Policy</td>
+                <td colSpan={3}>Limited Edition</td>
+              </tr>
+              <tr>
+                <td><a href="https://www.instagram.com/wix" target='_blank'>IG</a></td>
+                <td><a href="https://www.facebook.com/wix" target='_blank'>FB</a></td>
+                <td><a href="https://www.tiktok.com/@wix" target='_blank'>TKTK</a></td>
+                <td colSpan={3}>Accessibility Statement</td>
+                <td colSpan={3}>Kids Collection</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div className={styles.end}>
         <p>© 2035 by Ryst. Powered and secured by <a href="https://www.wix.com/?utm_campaign=vir_created_with">Wix</a></p>

@@ -3,10 +3,10 @@
 @mixin button-fromtransparent-to-yellowblack($fz) {
   background-color: transparent;
   color: #000000;
-  border: 1px solid #000000;
-  border-radius: 60px;
+  border: 0.052083vw solid #000000;
+  border-radius: 3.125vw;
   line-height: 1.3;
-  padding: 8px 15px;
+  padding: 0.416667vw 0.78125vw;
   font-size: $fz;
   cursor: pointer;
 
@@ -21,38 +21,38 @@
   width: fit-content;
 
   h2 {
-    font-size: 92px;
-    margin-bottom: 66px;
+    font-size: 4.791667vw;
+    margin-bottom: 3.4375vw;
   }
 
   p {
-    margin-bottom: 16px;
-    font-size: 20px;
+    margin-bottom: 0.833333vw;
+    font-size: 1.041667vw;
   }
 
   a {
     display: grid;
     place-content: center;
     color: colors.$yellow;
-    width: 104px;
-    height: 32px;
+    width: 5.416667vw;
+    height: 1.666667vw;
     background-color: #000000;
-    border-radius: 100px;
+    border-radius: 5.208333vw;
     border: none;
-    font-size: 12px;
+    font-size: 0.625vw;
   }
 }
 
 @mixin sale($bcc) {
   z-index: 2;
   position: absolute;
-  top: 13.875px;
-  left: 13.875px;
+  top: 0.722656vw;
+  left: 0.722656vw;
   background-color: $bcc;
   border: none;
-  padding: 2px 12px;
+  padding: 0.104167vw 0.625vw;
   color: #404040;
-  font-size: 12px;
+  font-size: 0.625vw;
 }
 
 @mixin showSecondImageHover {
@@ -84,7 +84,7 @@
 
 @mixin floatingBackgroundedSection($background_pos2) {
   width: 100%;
-  min-height: 840px;
+  min-height: 43.75vw;
   // background-image: url("/images/hero_section.avif");
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -93,7 +93,7 @@
   // background-color: red;
 
   display: flex;
-  padding: 64px 93px 80px 24px;
+  padding: 3.333333vw 4.84375vw 4.166667vw 1.25vw;
   flex-direction: column;
   justify-content: space-between;
 
@@ -103,17 +103,17 @@
 
   .right-bottom {
     align-self: flex-end;
-    width: 514px;
-    height: 277.391px;
-    border-radius: 5px;
+    width: 26.770833vw;
+    height: 14.447448vw;
+    border-radius: 0.260417vw;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 8px;
+    padding: 0.416667vw;
     display: flex;
 
     .img-container {
       flex-shrink: 0;
       height: 100%;
-      width: 347px;
+      width: 18.072917vw;
       position: relative;
 
       img {
@@ -126,7 +126,7 @@
     }
 
     .product-data {
-      padding: 16px;
+      padding: 0.833333vw;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -134,13 +134,16 @@
       .name-and-price {
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 0.208333vw;
 
-        h4 {}
+        h4 {
+          font-size: 0.625vw;
+        }
 
         .price-pt {
           display: flex;
-          gap: 4px;
+          gap: 0.208333vw;
+          font-size: 0.729167vw;
 
           ins {
             text-decoration: none;
@@ -153,7 +156,7 @@
       }
 
       .add {
-        @include button-fromtransparent-to-yellowblack(16px);
+        @include button-fromtransparent-to-yellowblack(0.833333vw);
       }
     }
   }
@@ -175,13 +178,11 @@
     .running-line {
       display: flex;
       font-size: $fz;
-      gap: 48px;
+      gap: 2.5vw;
       white-space: nowrap;
-      // list-style: none;
-      // margin: 0;
       padding: 0;
       align-items: center;
-      margin-inline: 24px;
+      margin-inline: 1.25vw;
 
       li {
         color: $color;
@@ -205,13 +206,13 @@
 
 
 @mixin lil-section-name {
-    padding-block: 112px 32px;
+    padding-block: 5.833333vw 1.666667vw;
     display: flex;
     justify-content: space-between;
 
     h2 {}
 
     a {
-      @include button-fromtransparent-to-yellowblack(12px);
+      @include button-fromtransparent-to-yellowblack(0.625vw);
     }
 }

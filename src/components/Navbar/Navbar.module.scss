@@ -2,15 +2,15 @@
 @use "../../sass/mixins" as *;
 
 .marquee-container {
-  @include marquee-container-style(29px, colors.$yellow, 12px);
+  @include marquee-container-style(1.510417vw, colors.$yellow, 0.625vw);
 }
 
 .header-menu {
-  height: 69.47px;
+  height: 3.618229vw;
   background-color: #fff;
   display: flex;
   align-items: center;
-  padding-inline: 24px;
+  padding-inline: 1.25vw;
 
   ul {
     list-style-type: none;
@@ -18,7 +18,7 @@
     li {
       &.ryst {
         a {
-          font-size: 24px;
+          font-size: 1.25vw;
 
         }
       }
@@ -28,26 +28,26 @@
         align-items: center;
 
         .search {
-          margin-right: 29px;
+          margin-right: 1.510417vw;
 
           i {
-            font-size: 17px;
+            font-size: 0.885417vw;
           }
         }
 
         .signs {
           display: flex;
-          gap: 6px;
-          margin-right: 16px;
+          gap: 0.3125vw;
+          margin-right: 0.833333vw;
 
           i {
-            font-size: 20px;
+            font-size: 1.041667vw;
           }
         }
 
         .buttons {
           display: flex;
-          gap: 8px;
+          gap: 0.416667vw;
           align-items: center;
 
           a,
@@ -57,17 +57,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 32px;
-            border-radius: 16px;
-            border: 1px solid #000000;
-            font-size: 12px;
+            height: 1.666667vw;
+            border-radius: 0.833333vw;
+            border: 0.052083vw solid #000000;
+            font-size: 0.625vw;
 
             &.login {
-              width: 120px;
+              width: 6.25vw;
             }
 
             &.menu {
-              width: 80px;
+              width: 4.166667vw;
 
             }
           }
