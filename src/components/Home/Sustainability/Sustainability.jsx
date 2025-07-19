@@ -8,47 +8,47 @@ import FloatingBackgroundSection from '../../ui/FloatingBackgroundSection/Floati
 export default function Sustainability() {
   const left_topRef = useRef(null);
   const sectionRef = useRef(null);
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   if (!section) return;
 
-    let lastScrollY = window.scrollY;
-    let currentOffset = -10; // Սկզբնական բարձրություն
-    const movementRange = 30; // Max px շարժ
+  //   let lastScrollY = window.scrollY;
+  //   let currentOffset = -10; // Սկզբնական բարձրություն
+  //   const movementRange = 30; // Max px շարժ
 
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const delta = scrollY - lastScrollY;
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const delta = scrollY - lastScrollY;
 
-      const rect = section.getBoundingClientRect();
+  //     const rect = section.getBoundingClientRect();
 
-      // scroll down → միշտ շարժվի
-      if (delta > 0) {
-        currentOffset += delta * 0.4;
-      }
+  //     // scroll down → միշտ շարժվի
+  //     if (delta > 0) {
+  //       currentOffset += delta * 0.4;
+  //     }
 
-      // scroll up → շարժվի միայն եթե ներքևը >= window.innerHeight
-      if (delta < 0 && rect.bottom >= window.innerHeight) {
-        currentOffset += delta * 0.05;
-      }
+  //     // scroll up → շարժվի միայն եթե ներքևը >= window.innerHeight
+  //     if (delta < 0 && rect.bottom >= window.innerHeight) {
+  //       currentOffset += delta * 0.05;
+  //     }
 
-      // սահմանափակում
-      currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
+  //     // սահմանափակում
+  //     currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
 
-      section.style.setProperty(
-        'background-position',
-        `center ${currentOffset}px`,
-        'important'
-      );
+  //     section.style.setProperty(
+  //       'background-position',
+  //       `center ${currentOffset}px`,
+  //       'important'
+  //     );
 
-      lastScrollY = scrollY;
-    };
+  //     lastScrollY = scrollY;
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
 
   return (

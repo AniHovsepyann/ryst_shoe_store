@@ -8,31 +8,31 @@ export default function HeroSection() {
   // const sectionRef = useRef(null);
   const left_topRef = useRef(null);
   const sectionRef = useRef(null);
-  // useEffect(() => {
-  //   const section = sectionRef.current;
+  useEffect(() => {
+    const section = sectionRef.current;
 
-  //   const handleScroll = () => {
-  //     const scrollY = window.scrollY;
-  //     const offset = scrollY * 0.3; // կարգավորի՝ որքան ուժեղ շարժվի նկարը
-  //     section.style.backgroundPosition = `center calc(50% - ${offset}px)`;
-  //   };
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const offset = scrollY * 0.3; // կարգավորի՝ որքան ուժեղ շարժվի նկարը
+      section.style.backgroundPosition = `center calc(50% - ${offset}px)`;
+    };
 
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-useEffect(() => {
-  const section = sectionRef.current;
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+// useEffect(() => {
+//   const section = sectionRef.current;
 
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-    const vw = window.innerWidth / 100;
-    const offset = scrollY * 0.3 * vw / 10; // scrollY * ռեսպոնսիվ չափս
-    section.style.backgroundPosition = `center calc(50% - ${offset}px)`;
-  };
+//   const handleScroll = () => {
+//     const scrollY = window.scrollY;
+//     const vw = window.innerWidth / 100;
+//     const offset = scrollY * 0.3 * vw / 10; // scrollY * ռեսպոնսիվ չափս
+//     section.style.backgroundPosition = `center calc(50% - ${offset}px)`;
+//   };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+//   window.addEventListener("scroll", handleScroll);
+//   return () => window.removeEventListener("scroll", handleScroll);
+// }, []);
 
   return (
     // <FloatingBackgroundSection sectionRef={sectionRef} left_topRef={left_topRef} parentStyles={styles} image_1={}/>

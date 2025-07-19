@@ -49,42 +49,114 @@ export default function KidsOff() {
 
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
+  // useEffect(() => {
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
+  //   const section = sectionRef.current;
 
-    // background image-ի approximate բարձրությունը px-ով (պիտի ճշգրտես ըստ քո նկարի)
-    const imageHeight = 400; // փոխիր իրական չափով
+  //   if (!section) return;
 
-    const handleScroll = () => {
-      const rect = section.getBoundingClientRect();
+  //   // let lastScrollY = window.scrollY;
+  //   let currentOffset = -10; // Սկզբնական բարձրություն
 
-      // current background-position-y-ը ստանալու համար, կվերծանենք inline style-ից
-      const bgPosition = window.getComputedStyle(section).backgroundPosition.split(" ");
-      const bgPosY = bgPosition.length > 1 ? parseFloat(bgPosition[1]) : 0;
+  //   const aspectRatio = 821 / 1920; // քո background image-ի կողմերի հարաբերակցությունը
+  //   const bgHeight = section.offsetWidth * aspectRatio; // background image-ի իրական բարձրությունը
+  //   const bgBottom = currentOffset + bgHeight;
+  //   const sectionHeight = section.offsetHeight;
+  //   console.log("bgBottom:", bgBottom, "sectionHeight:", sectionHeight);
 
-      // background image-ի վերևի պոզիցիան (relative to viewport)
-      const bgTop = rect.top + bgPosY;
+  //   if (bgBottom < sectionHeight) {
+  //     console.log("let go up");
 
-      // background image-ի ստորին պոզիցիան
-      const bgBottom = bgTop + imageHeight;
+  //     // background image-ի ներքևը ավելի վերևում է քան section-ի ներքևը
+  //     // այսինքն "չափից դուրս բարձրացել է"
+  //   }
+  //   //   const movementRange = 30; // Max px շարժ
 
-      // floating-background-section-ի ստորին պոզիցիան
-      const sectionBottom = rect.bottom;
+  //   //   const handleScroll = () => {
+  //   //     const scrollY = window.scrollY;
+  //   //     const delta = scrollY - lastScrollY;
 
-      console.log("Background image bottom:", bgBottom);
-      console.log("Floating-background-section bottom:", sectionBottom);
-      if (bgBottom === sectionBottom) {
-        console.log("equal");
-      }
-    };
+  //   //     const rect = section.getBoundingClientRect();
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+  //   //     // scroll down → միշտ շարժվի
+  //   //     if (delta > 0) {
+  //   //       currentOffset += delta * 0.4;
+  //   //     }
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   //     // scroll up → շարժվի միայն եթե ներքևը >= window.innerHeight
+  //   //     if (delta < 0 && rect.bottom >= window.innerHeight) {
+  //   //       currentOffset += delta * 0.05;
+  //   //     }
+
+  //   //     // սահմանափակում
+  //   //     currentOffset = Math.max(-10 - movementRange, Math.min(-10 + movementRange, currentOffset));
+
+  //   //     section.style.setProperty(
+  //   //       'background-position',
+  //   //       `center ${currentOffset}px`,
+  //   //       'important'
+  //   //     );
+
+  //   //     lastScrollY = scrollY;
+  //   //   };
+
+  //   //   window.addEventListener("scroll", handleScroll);
+  //   //   handleScroll();
+
+  //   //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+  // useEffect(() => {
+  //   const section = sectionRef.current;
+  //   if (!section) return;
+
+  //   let lastScrollY = window.scrollY;
+  //   let currentOffset = -10;
+
+  //   const aspectRatio = 821 / 1920; // քո bg նկարի aspect ratio
+
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const delta = scrollY - lastScrollY;
+
+  //     const sectionHeight = section.offsetHeight;
+  //     const sectionWidth = section.offsetWidth;
+
+  //     const bgHeight = sectionWidth * aspectRatio;
+  //     const bgBottom = currentOffset + bgHeight;
+  //     console.log("bgBottom:", bgBottom, "sectionHeight:", sectionHeight);
+
+
+
+  //     // ✔️ scroll down → միշտ շարժվի
+  //     if (delta > 0) {
+  //       currentOffset += delta * 0.4;
+  //     }
+
+  //     // ✔️ scroll up → շարժվի միայն եթե bgBottom > sectionHeight
+  //     if (delta < 0 && bgBottom > sectionHeight) {
+  //       currentOffset += delta * 0.05;
+  //     }
+
+  //     // ❗ սահմանափակում, որ չլքի սահմանները
+  //     const maxOffset = 0;
+  //     const minOffset = sectionHeight - bgHeight;
+  //     currentOffset = Math.max(minOffset, Math.min(maxOffset, currentOffset));
+
+  //     section.style.setProperty(
+  //       'background-position',
+  //       `center ${currentOffset}px`,
+  //       'important'
+  //     );
+
+  //     lastScrollY = scrollY;
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll(); // անմիջապես կանչի, որ ճիշտ դրույթից սկսի
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
 
   return (
     // <FloatingBackgroundSection sectionRef={sectionRef} parentStyles={styles} image_1={"https://static.wixstatic.com/media/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg/v1/fill/w_347,h_260,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_936329eced864c0abedbf89844390c72~mv2.jpg"}/>
