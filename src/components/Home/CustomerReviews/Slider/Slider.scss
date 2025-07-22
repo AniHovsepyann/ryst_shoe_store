@@ -1,0 +1,31 @@
+.slick-slider {
+  height: 263.59px;
+  // border: 1px solid red;
+  width: 900px;
+
+  .slick-list {
+    height: 100%;
+
+    .slick-track {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      // display: grid;
+      // grid-template-columns: repeat(2, 424px);
+    }
+
+  }
+
+  .slick-slide {
+    border: 1px solid black;
+    width: 424px !important;
+  }
+
+  .slick-arrow {
+    &::before {
+      color: #000;
+      font-size: 30px;
+      // content: "";
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use "../../../sass/mixins" as *;
+
+section.CustomerReviews {
+  margin-inline: 24px 25px;
+
+  .lil-section-name {
+    @include lil-section-name;
+  }
+
+  // .slick-slider {
+  //   height: 600px;
+  //   border: 1px solid red;
+  // }
+}

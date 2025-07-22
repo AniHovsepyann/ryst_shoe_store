@@ -10,6 +10,9 @@
   font-size: $fz;
   cursor: pointer;
 
+  display: grid;
+  place-content: center;
+
   &:hover {
     text-decoration: underline;
     color: colors.$yellow;
