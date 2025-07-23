@@ -1,3 +1,9 @@
+.slider-container {
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+}
+
 .slick-slider {
   height: 263.59px;
   // border: 1px solid red;
@@ -19,13 +25,65 @@
   .slick-slide {
     border: 1px solid black;
     width: 424px !important;
+    border-radius: 5px;
+
+    &:nth-child(odd) {
+      background-color: #000;
+      color: #fff;
+    }
+
+    div:has(.each) {
+      height: 100%;
+      width: 100%;
+
+      .each {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 40px 24px 24px;
+
+        .header-text {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          h3 {
+            font-size: 12px;
+          }
+
+          blockquote {
+            font-size: 14px;
+          }
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
   }
 
   .slick-arrow {
+    background-color: #000;
+    border-radius: 50%;
+    // width: 25px;
+    // height: 25px;
+    // color: #000;
+
     &::before {
-      color: #000;
       font-size: 30px;
-      // content: "";
+      opacity: 1;
+      position: absolute;
+      left: -6px;
+      top: -2px;
+      // color: #000;
+      color: #fff;
     }
+  }
+
+  .slick-dots {
+    display: none !important;
+
   }
 }

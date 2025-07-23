@@ -1,0 +1,130 @@
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+
+  .header {
+    padding-inline: 20px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .location {
+      gap: 4px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .category {
+      font-size: 20px;
+    }
+  }
+
+  .main {
+    display: flex;
+
+    .filter-pt,
+    .products {
+      padding: 20px;
+      display: flex;
+    }
+
+    .filter-pt {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      flex-basis: 220px;
+      flex-shrink: 0;
+
+      .by {
+
+        .name {
+          border-bottom: 1px solid rgba(0, 0, 0, .2);
+          font-size: 16px;
+          padding-bottom: 16px;
+        }
+
+        &.browse {
+          .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 12px;
+            padding-top: 15px;
+          }
+        }
+
+        &.filter {}
+      }
+
+    }
+
+    .products {
+      flex-grow: 1;
+
+      .top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        span {}
+
+        .sortDropdown {
+          z-index: 1;
+          font: var(--font-montserrat-sans-serif-15px);
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+
+          &:has(.active) {
+            .after {
+              rotate: 180deg;
+            }
+          }
+
+          .dropdown-toggle {
+            padding: 10px;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+            justify-content: end;
+            gap: 8.37px;
+
+            .after {}
+
+          }
+
+          .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid rgb(0, 0, 0, 0.4);
+            display: none;
+            width: 220px;
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .1), 0 0 4px 0 rgba(0, 0, 0, .1);
+            padding-block: 12px;
+
+            &.active {
+              display: block;
+            }
+
+            div {
+              padding: 8px 24px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #f0f0f0;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

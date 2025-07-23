@@ -3,7 +3,11 @@ import Slider from "react-slick";
 import "./Slider.scss"
 
 function DynamicSlides() {
-  const [slides, setSlides] = useState([1, 2, 3, 4]);
+  const [slides, setSlides] = useState([
+    { header: "“A MUST-HAVE FOR EVERY ATHLETE“", text: "“I'm a review. Click to edit me and add text from a critic who has evaluated you and your work.”", name: "NAME", key: 1 },
+    { header: "“A MUST-HAVE FOR EVERY ATHLETE“", text: "“I'm a review. Click to edit me and add text from a critic who has evaluated you and your work.”", name: "NAME", key: 2 },
+    { header: "“A MUST-HAVE FOR EVERY ATHLETE“", text: "“I'm a review. Click to edit me and add text from a critic who has evaluated you and your work.”", name: "NAME", key: 3 },
+    { header: "“A MUST-HAVE FOR EVERY ATHLETE“", text: "“I'm a review. Click to edit me and add text from a critic who has evaluated you and your work.”", name: "NAME", key: 4 }]);
   const handleClick = () => {
     setSlides(
       slides.length === 6 ? [1, 2, 3, 4, 5, 6, 7, 8, 9] : [1, 2, 3, 4, 5, 6]
@@ -24,8 +28,12 @@ function DynamicSlides() {
       <Slider {...settings}>
         {slides.map(slide => {
           return (
-            <div key={slide}>
-              <h3>{slide}</h3>
+            <div className="each" key={slide.key}>
+              <div className="header-text">
+                <h3>{slide.header}</h3>
+                <blockquote>{slide.text}</blockquote>
+              </div>
+              <span>{slide.name}</span>
             </div>
           );
         })}
