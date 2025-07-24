@@ -1,6 +1,145 @@
-import styles from './ShopNow.module.scss'
+// import styles from './ShopNow.module.scss'
+// import SortDropdown from './SortDropdown'
+
+// export default function ShopNow() {
+//   return (
+//     <section>
+//       <div className={styles.header}>
+//         <div className={styles.location}>
+//           <span>Home</span>
+//           <i className="bi bi-chevron-right"></i>
+//           <span>All Products</span>
+//         </div>
+//         <span className={styles.category}>All Products</span>
+//       </div>
+//       <div className={styles.main}>
+//         <div className={styles["filter-pt"]}>
+//           <div className={`${styles.by} ${styles.browse}`}>
+//             <div className={styles.name}>
+//               <p>Browse by</p>
+//             </div>
+//             <div className={styles.categories}>
+//               <span>All Products</span>
+//               <span>Best Sellers</span>
+//               <span>Limited Edition</span>
+//               <span>Performance Series</span>
+//               <span>Kids Collection</span>
+//             </div>
+//           </div>
+//           <div className={`${styles.by} ${styles.filter}`}>
+//             <div className={styles.name}>
+//               <p>Filter by</p>
+//             </div>
+
+//           </div>
+//         </div>
+//         <div className={styles.products}>
+//           <div className={styles.top}>
+//             <span>4 products</span>
+//             <SortDropdown />
+//           </div>
+//           <div className={styles.items}></div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+// import styles from './ShopNow.module.scss'
+// import SortDropdown from './SortDropdown'
+
+// export default function ShopNow() {
+//   return (
+//     <section>
+//       <div className={styles.header}>
+//         <div className={styles.location}>
+//           <span>Home</span>
+//           <i className="bi bi-chevron-right"></i>
+//           <span>All Products</span>
+//         </div>
+//         <span className={styles.category}>All Products</span>
+//       </div>
+
+//       <div className={styles.main}>
+//         <div className={styles["filter-pt"]}>
+//           <div className={`${styles.by} ${styles.browse}`}>
+//             <div className={styles.name}>
+//               <p>Browse by</p>
+//             </div>
+//             <div className={styles.categories}>
+//               <span>All Products</span>
+//               <span>Best Sellers</span>
+//               <span>Limited Edition</span>
+//               <span>Performance Series</span>
+//               <span>Kids Collection</span>
+//             </div>
+//           </div>
+//           <div className={`${styles.by} ${styles.filter}`}>
+//             <div className={styles.name}>
+//               <p>Filter by</p>
+//             </div>
+//             <div className={styles["filter-details"]}>
+//               <div className={`${styles["price-details-opener"]} ${styles.opened}`}>
+//                 <span>Price</span>
+//                 <svg className={styles.minus} viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+//                   <path fillRule="evenodd" d="M15.5,10 L15.5,11 L4.5,11 L4.5,10 L15.5,10 Z" />
+//                 </svg>
+//                 <svg className={styles.plus} viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+//                   <path fillRule="evenodd" d="M11,5 L10.999,10 L16,10 L16,11 L11,11 L11,16 L10,16 L9.999,11 L5,11 L5,10 L10,9.999 L10,5 L11,5 Z" />
+//                 </svg>
+//               </div>
+
+//               <div id="app" className={styles["two-ranges"]}>
+//                 <div className={styles["range-slider"]}>
+//                   <div className={styles["range-container"]}>
+//                     <input type="range" id="minSlider" className={styles.minSlider} min="0" max="180" step="1" defaultValue="0" />
+//                     <input type="range" id="maxSlider" className={styles.maxSlider} min="0" max="180" step="1" defaultValue="0" />
+//                   </div>
+//                   <div className={styles.values}>
+//                     <div>
+//                       $<input type="number" className={styles["lower-range"]} id="minInput" min="0" max="180" step="1" defaultValue="0" readOnly />
+//                     </div>
+//                     <div>
+//                       $<input type="number" className={styles["raise-range"]} id="maxInput" min="0" max="180" step="1" defaultValue="0" readOnly />
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//         <div className={styles.products}>
+//           <div className={styles.top}>
+//             <span>4 products</span>
+//             <SortDropdown />
+//           </div>
+//           <div className={styles.items}></div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
+import { useState, useEffect } from 'react';
+import styles from './ShopNow.module.scss';
+import SortDropdown from './SortDropdown';
 
 export default function ShopNow() {
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
+
+  // Ensure minPrice never exceeds maxPrice
+  useEffect(() => {
+    if (minPrice > maxPrice) {
+      setMaxPrice(minPrice);
+    }
+  }, [minPrice]);
+
+  // Ensure maxPrice never less than minPrice
+  useEffect(() => {
+    if (maxPrice < minPrice) {
+      setMinPrice(maxPrice);
+    }
+  }, [maxPrice]);
+
   return (
     <section>
       <div className={styles.header}>
@@ -11,6 +150,7 @@ export default function ShopNow() {
         </div>
         <span className={styles.category}>All Products</span>
       </div>
+
       <div className={styles.main}>
         <div className={styles["filter-pt"]}>
           <div className={`${styles.by} ${styles.browse}`}>
@@ -25,37 +165,87 @@ export default function ShopNow() {
               <span>Kids Collection</span>
             </div>
           </div>
+
           <div className={`${styles.by} ${styles.filter}`}>
             <div className={styles.name}>
               <p>Filter by</p>
             </div>
-          </div>
-        </div>
-        <div className={styles.products}>
-          <div className={styles.top}>
-            <span>4 products</span>
-            <div className={`${styles.dropdown} ${styles.sortDropdown}`}id="sortDropdown">
-              <div className={`${styles["dropdown-toggle"]} ${styles.selectedOption}`}>
-                <p>Sort By: <span>Recommended</span></p>
-                <div className={styles.after}>
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L6 6L11 1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    </path>
-                  </svg>
-                </div>
+
+            <div className={styles["filter-details"]}>
+              <div className={`${styles["price-details-opener"]} ${styles.opened}`}>
+                <span>Price</span>
+                <svg className={styles.minus} viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                  <path fillRule="evenodd" d="M15.5,10 L15.5,11 L4.5,11 L4.5,10 L15.5,10 Z" />
+                </svg>
+                <svg className={styles.plus} viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                  <path fillRule="evenodd" d="M11,5 L10.999,10 L16,10 L16,11 L11,11 L11,16 L10,16 L9.999,11 L5,11 L5,10 L10,9.999 L10,5 L11,5 Z" />
+                </svg>
               </div>
-              <div className={styles["dropdown-menu"]} >
-                <div className={styles["sort-product"]} data-value="recommended">Recommended</div>
-                <div className={styles["sort-product"]} data-value="newest">Newest</div>
-                <div className={styles["sort-product"]} data-value="price-low-high">Price (low to high)</div>
-                <div className={styles["sort-product"]} data-value="price-high-low">Price (high to low)</div>
-                <div className={styles["sort-product"]} data-value="a-z">Name A-Z</div>
-                <div className={styles["sort-product"]} data-value="z-a">Name Z-A</div>
+
+              <div id="app" className={styles["two-ranges"]}>
+                <div className={styles["range-slider"]}>
+                  <div className={styles["range-container"]}>
+                    <input
+                      type="range"
+                      id="minSlider"
+                      className={styles.minSlider}
+                      min="0"
+                      max="180"
+                      step="1"
+                      value={minPrice}
+                      onChange={(e) => setMinPrice(Number(e.target.value))}
+                    />
+                    <input
+                      type="range"
+                      id="maxSlider"
+                      className={styles.maxSlider}
+                      min="0"
+                      max="180"
+                      step="1"
+                      value={maxPrice}
+                      onChange={(e) => setMaxPrice(Number(e.target.value))}
+                    />
+                  </div>
+                  <div className={styles.values}>
+                    <div>
+                      $<input
+                        type="number"
+                        className={styles["lower-range"]}
+                        id="minInput"
+                        min="0"
+                        max="180"
+                        step="1"
+                        value={minPrice}
+                        onChange={(e) => setMinPrice(Number(e.target.value))}
+                      />
+                    </div>
+                    <div>
+                      $<input
+                        type="number"
+                        className={styles["raise-range"]}
+                        id="maxInput"
+                        min="0"
+                        max="180"
+                        step="1"
+                        value={maxPrice}
+                        onChange={(e) => setMaxPrice(Number(e.target.value))}
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div className={styles.products}>
+          <div className={styles.top}>
+            <span>4 products</span>
+            <SortDropdown />
+          </div>
+          <div className={styles.items}></div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

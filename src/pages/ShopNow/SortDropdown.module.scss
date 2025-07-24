@@ -1,0 +1,57 @@
+  .sortDropdown {
+          z-index: 1;
+          font-size: 14px;
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+
+          .active {
+            display: block;
+          }
+
+
+          &:has(.active) {
+            .after {
+              rotate: 180deg;
+            }
+          }
+
+          .dropdown-toggle {
+            padding: 10px;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+            justify-content: end;
+            gap: 8.37px;
+
+            .after {}
+
+          }
+
+          .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid rgb(0, 0, 0, 0.4);
+            display: none;
+            width: 220px;
+
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .1), 0 0 4px 0 rgba(0, 0, 0, .1);
+            padding-block: 12px;
+
+            &.active {
+              display: block;
+            }
+
+            div {
+              padding: 8px 24px;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #f0f0f0;
+              }
+            }
+          }
+        }
