@@ -26,11 +26,13 @@
   h2 {
     font-size: 4.791667vw;
     margin-bottom: 3.4375vw;
+    letter-spacing: -0.03em;
   }
 
   p {
     margin-bottom: 0.833333vw;
     font-size: 1.041667vw;
+
   }
 
   a {
@@ -209,13 +211,13 @@
 
 
 @mixin lil-section-name {
-    padding-block: 5.833333vw 1.666667vw;
-    display: flex;
-    justify-content: space-between;
+  padding-block: 5.833333vw 1.666667vw;
+  display: flex;
+  justify-content: space-between;
 
-    h2 {}
+  h2 {}
 
-    a {
-      @include button-fromtransparent-to-yellowblack(0.625vw);
-    }
+  a {
+    @include button-fromtransparent-to-yellowblack(0.625vw);
+  }
 }
