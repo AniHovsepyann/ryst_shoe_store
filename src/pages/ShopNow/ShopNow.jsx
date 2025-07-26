@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
 import styles from './ShopNow.module.scss';
 import SortDropdown from './SortDropdown';
+import { useSelector } from 'react-redux';
+import { getAllProducts } from '../../features/productsSlice';
 
 export default function ShopNow() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(0);
   const [isPriceOpened, setIsPriceOpened] = useState(true);
+  const data = useSelector(getAllProducts)
 
+  console.log(data);
 
   // Ensure minPrice never exceeds maxPrice
   useEffect(() => {
@@ -54,7 +58,6 @@ export default function ShopNow() {
             </div>
 
             <div className={styles["filter-details"]}>
-              {/* <div className={`${styles["price-details-opener"]} ${styles.opened}`}> */}
               <div
                 className={`${styles["price-details-opener"]} ${isPriceOpened ? styles.opened : ''}`}
                 onClick={() => setIsPriceOpened(!isPriceOpened)}
