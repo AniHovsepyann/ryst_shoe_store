@@ -1,13 +1,292 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+  "products": [
+    {
+      "id": "1",
+      "title": "ECO RUNNER",
+      "sku": "001",
+      "price": 145,
+      "slug": "eco_runner",
+      "images": [
+        "/images/product1_1.avif",
+        "/images/product1_2.avif"
+      ],
+      "review": [],
+      "category": [
+        "Limited Edition"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "EARTH SAVER",
+      "sku": "002",
+      "price": 160,
+      "slug": "earth_saver",
+      "images": [
+        "/images/product2_1.avif",
+        "/images/product2_2.avif"
+      ],
+      "review": [],
+      "category": [
+        "Limited Edition"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "SUSTAINABLE STRIDER",
+      "sku": "003",
+      "price": 150,
+      "slug": "sustainable_strider",
+      "images": [
+        "/images/product3_1.avif",
+        "/images/product3_2.avif"
+      ],
+      "review": [
+        {
+          "name": "Ava Howard",
+          "rate": "4",
+          "title": "Highly recommend",
+          "review": "The online shopping experience was very easy and smooth. I was a bit hesitant if this is right for me. Though there is a lot of relevant information on their site I still wanted to double-check some product specs, like the material and dimensions. Their agents were so professional, attentive and provided very accurate information. Overall, I am quite satisfied with their quality.",
+          "date": "Apr 25, 2022",
+          "helpCount": 1
+        },
+        {
+          "name": "Dan Terez",
+          "rate": "5",
+          "title": "Amazing product",
+          "review": "This product is amazing. I bought it twice already and honestly it's a game changer, especially for its value. I used to get something similar from larger retail stores but it was just overpriced and the quality was average. No thanks! I'll get something way cheaper and higher quality from sites like these, thank you very much. Highly recommend this to everyone!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Suny Singhud",
+          "rate": "5",
+          "title": "Lovely decoration",
+          "review": "I use this as decoration in my living room and everyone loves it. Adds a little bit of fun as decoration and still looks smart. Had a bit of an issue with shipping, but Laura sorted it out no problem. 10/10 will order something again!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Jenny Price",
+          "rate": "4",
+          "title": "Loved it.",
+          "review": "My granddaughter had this for her 11th birthday. She loved it. Though it was smaller than we expected, but all in all it was ok.",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Bryce Callighan",
+          "rate": "5",
+          "title": "Pleasantly surprised!",
+          "review": "A friend recommended this item for me a few weeks ago. Was a bit skeptical at first but all the great reviews convinced me to try it. Gotta say, I'm glad I listened! The product was packaged well, arrived on time and the quality was great for this price range.",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Caitlyn Tanner",
+          "rate": "5",
+          "title": "First class",
+          "review": "Another great product from this site. Bought a bunch of other stuff, was never disappointed. Quality's great and delivery is always on time. Well on track to becoming my new favorite online shop!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        }
+      ],
+      "category": [
+        "Best Sellers"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "GREEN EXPLORER",
+      "sku": "004",
+      "price": 140,
+      "slug": "green_explorer",
+      "images": [
+        "/images/product4_1.avif",
+        "/images/product4_2.avif"
+      ],
+      "review": [
+        {
+          "name": "Ava Howard",
+          "rate": "4",
+          "title": "Highly recommend",
+          "review": "The online shopping experience was very easy and smooth. I was a bit hesitant if this is right for me. Though there is a lot of relevant information on their site I still wanted to double-check some product specs, like the material and dimensions. Their agents were so professional, attentive and provided very accurate information. Overall, I am quite satisfied with their quality.",
+          "date": "Apr 25, 2022",
+          "helpCount": 1
+        }
+      ],
+      "category": [
+        "Limited Edition"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "SPEED PRO",
+      "sku": "005",
+      "price": 150,
+      "slug": "speed_pro",
+      "images": [
+        "/images/product5_1.avif",
+        "/images/product5_2.avif"
+      ],
+      "review": [],
+      "category": [
+        "Performance Series"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "DISTANCE ELITE",
+      "sku": "006",
+      "price": 140,
+      "old_price": 160,
+      "slug": "distance_elite",
+      "images": [
+        "/images/product6_1.avif",
+        "/images/product6_2.avif"
+      ],
+      "review": [],
+      "category": [
+        "Best Sellers",
+        "Kids Collection"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "MARATHON MASTER",
+      "sku": "007",
+      "price": 140,
+      "old_price": 160,
+      "slug": "marathon_master",
+      "images": [
+        "/images/product7_1.avif",
+        "/images/product7_2.avif"
+      ],
+      "review": [
+        {
+          "name": "Dan Terez",
+          "rate": "5",
+          "title": "Amazing product",
+          "review": "This product is amazing. I bought it twice already and honestly it's a game changer, especially for its value. I used to get something similar from larger retail stores but it was just overpriced and the quality was average. No thanks! I'll get something way cheaper and higher quality from sites like these, thank you very much. Highly recommend this to everyone!"
+        },
+        {
+          "name": "Jenny Price",
+          "rate": "4",
+          "title": "Loved it.",
+          "review": "My granddaughter had this for her 11th birthday. She loved it. Though it was smaller than we expected, but all in all it was ok."
+        }
+      ],
+      "category": [
+        "Performance Series"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "SPRINT CHAMP",
+      "sku": "008",
+      "price": 180,
+      "slug": "sprint_champ",
+      "images": [
+        "/images/product8_1.avif",
+        "/images/product8_2.avif"
+      ],
+      "review": [
+        {
+          "name": "Emily May",
+          "rate": "4",
+          "title": "Wildly inexpensive for such great quality",
+          "review": "I was skeptical at first cause the price seemed way too good to be true but I decided to give it a shot. I’m so glad I did! You can't go wrong with this product. At first, I was tempted by its lovely looks and design. But I honestly wasn’t hoping for it to be so easy to use and long-lasting. Finally, I got ALL those things.",
+          "date": "Apr 07, 2022",
+          "helpCount": 0
+        }
+      ],
+      "category": [
+        "Performance Series",
+        "Best Sellers"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "YOUNG ADVENTURER",
+      "sku": "009",
+      "price": 72,
+      "old_price": 90,
+      "slug": "young_adventurer",
+      "images": [
+        "/images/product9_1.avif",
+        "/images/product9_2.avif"
+      ],
+      "review": [],
+      "category": [
+        ""
+      ]
+    },
+    {
+      "id": "",
+      "title": "",
+      "sku": "",
+      "price": ,
+      "slug": "",
+      "images": [
+        "/images/product5_1.avif",
+        "/images/product5_2.avif"
+      ],
+      "review": [],
+      "category": [
+        ""
+      ]
+    },
+    {
+      "id": "",
+      "title": "",
+      "sku": "",
+      "price": ,
+      "slug": "",
+      "images": [
+        "/images/product5_1.avif",
+        "/images/product5_2.avif"
+      ],
+      "review": [],
+      "category": [
+        ""
+      ]
+    },
+    {
+      "id": "",
+      "title": "",
+      "sku": "",
+      "price": ,
+      "slug": "",
+      "images": [
+        "/images/product5_1.avif",
+        "/images/product5_2.avif"
+      ],
+      "review": [],
+      "category": [
+        ""
+      ]
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
     "name": "typicode"
   }
+}
+{
+  "name": "",
+  "rate": "",
+  "title": "",
+  "review": "",
+  "date": "",
+  "helpCount": 0
 }

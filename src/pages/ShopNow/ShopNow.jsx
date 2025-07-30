@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import styles from './ShopNow.module.scss';
 import SortDropdown from './SortDropdown';
-import { useSelector } from 'react-redux';
-import { getAllProducts } from '../../features/productsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProducts, getAsyncProducts, showType } from '../../features/productsSlice';
 
 export default function ShopNow() {
   const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(180);
   const [isPriceOpened, setIsPriceOpened] = useState(true);
+  const dispatch = useDispatch()
   const data = useSelector(getAllProducts)
-
-  console.log(data);
+  useEffect(() => {
+    dispatch(getAsyncProducts())
+  }, []);
 
   // Ensure minPrice never exceeds maxPrice
   useEffect(() => {
@@ -19,6 +21,7 @@ export default function ShopNow() {
     }
   }, [minPrice]);
 
+  console.log(data);
   // Ensure maxPrice never less than minPrice
   useEffect(() => {
     if (maxPrice < minPrice) {
@@ -36,7 +39,6 @@ export default function ShopNow() {
         </div>
         <span className={styles.category}>All Products</span>
       </div>
-
       <div className={styles.main}>
         <div className={styles["filter-pt"]}>
           <div className={`${styles.by} ${styles.browse}`}>
@@ -62,7 +64,6 @@ export default function ShopNow() {
                 className={`${styles["price-details-opener"]} ${isPriceOpened ? styles.opened : ''}`}
                 onClick={() => setIsPriceOpened(!isPriceOpened)}
               >
-
                 <span>Price</span>
                 <svg className={styles.minus} viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                   <path fillRule="evenodd" d="M15.5,10 L15.5,11 L4.5,11 L4.5,10 L15.5,10 Z" />
@@ -132,7 +133,9 @@ export default function ShopNow() {
             <span>4 products</span>
             <SortDropdown />
           </div>
-          <div className={styles.items}></div>
+          <div className={styles.items}>
+          {}
+          </div>
         </div>
       </div>
     </section>
