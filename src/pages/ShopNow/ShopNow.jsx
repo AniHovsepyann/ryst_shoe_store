@@ -9,7 +9,7 @@ export default function ShopNow() {
   const [maxPrice, setMaxPrice] = useState(180);
   const [isPriceOpened, setIsPriceOpened] = useState(true);
   const dispatch = useDispatch()
-  const data = useSelector(getAllProducts)
+  const { products, error, loading } = useSelector(getAllProducts)
   useEffect(() => {
     dispatch(getAsyncProducts())
   }, []);
@@ -21,13 +21,13 @@ export default function ShopNow() {
     }
   }, [minPrice]);
 
-  console.log(data);
   // Ensure maxPrice never less than minPrice
   useEffect(() => {
     if (maxPrice < minPrice) {
       setMinPrice(maxPrice);
     }
   }, [maxPrice]);
+  console.log(products);
 
   return (
     <section>
@@ -134,7 +134,31 @@ export default function ShopNow() {
             <SortDropdown />
           </div>
           <div className={styles.items}>
-          {}
+            {
+              products.map((elm) => {
+                return (
+                  <div className={styles.item}>
+                    <div className={styles["image-container"]}>
+                      <img className={styles.image1} src={elm.images.shopnow[0]} alt={elm.title} />
+                      <img className={styles.image2} src={elm.images.shopnow[1]} alt={elm.title} />
+                    </div>
+                    <div className={styles.info}>
+                      <h3>{elm.title}</h3>
+                      <p className={styles["price-pt"]}>
+                        <ins>${elm.price.toFixed(2)}</ins>
+                        &nbsp;
+                        {
+                          elm.old_price ?
+                            <del>${elm.old_price.toFixed(2)}</del>
+                            :
+                            null
+                        }
+                      </p>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </div>

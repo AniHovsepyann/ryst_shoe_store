@@ -6,10 +6,16 @@
       "sku": "001",
       "price": 145,
       "slug": "eco_runner",
-      "images": [
-        "/images/product1_1.avif",
-        "/images/product1_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product1_1.avif",
+          "/images/product1_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p1_1.avif",
+          "/images/shopnow_p1_2.avif"
+        ]
+      },
       "review": [],
       "category": [
         "Limited Edition"
@@ -21,10 +27,16 @@
       "sku": "002",
       "price": 160,
       "slug": "earth_saver",
-      "images": [
-        "/images/product2_1.avif",
-        "/images/product2_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product2_1.avif",
+          "/images/product2_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p2_1.avif",
+          "/images/shopnow_p2_2.avif"
+        ]
+      },
       "review": [],
       "category": [
         "Limited Edition"
@@ -32,14 +44,21 @@
     },
     {
       "id": "3",
+      "status": "BEST SELLER",
       "title": "SUSTAINABLE STRIDER",
       "sku": "003",
       "price": 150,
       "slug": "sustainable_strider",
-      "images": [
-        "/images/product3_1.avif",
-        "/images/product3_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product3_1.avif",
+          "/images/product3_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p3_1.avif",
+          "/images/shopnow_p3_2.avif"
+        ]
+      },
       "review": [
         {
           "name": "Ava Howard",
@@ -100,10 +119,16 @@
       "sku": "004",
       "price": 140,
       "slug": "green_explorer",
-      "images": [
-        "/images/product4_1.avif",
-        "/images/product4_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product4_1.avif",
+          "/images/product4_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p4_1.avif",
+          "/images/shopnow_p4_2.avif"
+        ]
+      },
       "review": [
         {
           "name": "Ava Howard",
@@ -124,10 +149,16 @@
       "sku": "005",
       "price": 150,
       "slug": "speed_pro",
-      "images": [
-        "/images/product5_1.avif",
-        "/images/product5_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product5_1.avif",
+          "/images/product5_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p5_1.avif",
+          "/images/shopnow_p5_2.avif"
+        ]
+      },
       "review": [],
       "category": [
         "Performance Series"
@@ -135,15 +166,22 @@
     },
     {
       "id": "6",
+      "status": "SALE",
       "title": "DISTANCE ELITE",
       "sku": "006",
       "price": 140,
       "old_price": 160,
       "slug": "distance_elite",
-      "images": [
-        "/images/product6_1.avif",
-        "/images/product6_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product6_1.avif",
+          "/images/product6_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p6_1.avif",
+          "/images/shopnow_p6_2.avif"
+        ]
+      },
       "review": [],
       "category": [
         "Best Sellers",
@@ -152,15 +190,22 @@
     },
     {
       "id": "7",
+      "status": "SALE",
       "title": "MARATHON MASTER",
       "sku": "007",
       "price": 140,
       "old_price": 160,
       "slug": "marathon_master",
-      "images": [
-        "/images/product7_1.avif",
-        "/images/product7_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product7_1.avif",
+          "/images/product7_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p7_1.avif",
+          "/images/shopnow_p7_2.avif"
+        ]
+      },
       "review": [
         {
           "name": "Dan Terez",
@@ -181,14 +226,21 @@
     },
     {
       "id": "8",
+      "status": "BEST SELLER",
       "title": "SPRINT CHAMP",
       "sku": "008",
       "price": 180,
       "slug": "sprint_champ",
-      "images": [
-        "/images/product8_1.avif",
-        "/images/product8_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product8_1.avif",
+          "/images/product8_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p8_1.avif",
+          "/images/shopnow_p8_2.avif"
+        ]
+      },
       "review": [
         {
           "name": "Emily May",
@@ -206,63 +258,362 @@
     },
     {
       "id": "9",
+      "status": "SALE",
       "title": "YOUNG ADVENTURER",
       "sku": "009",
       "price": 72,
       "old_price": 90,
       "slug": "young_adventurer",
-      "images": [
-        "/images/product9_1.avif",
-        "/images/product9_2.avif"
-      ],
+      "images": {
+        "product_show": [
+          "/images/product9_1.avif",
+          "/images/product9_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p9_1.avif",
+          "/images/shopnow_p9_2.avif"
+        ]
+      },
       "review": [],
       "category": [
-        ""
+        "Kids Collection"
       ]
     },
     {
-      "id": "",
-      "title": "",
-      "sku": "",
-      "price": ,
-      "slug": "",
-      "images": [
-        "/images/product5_1.avif",
-        "/images/product5_2.avif"
+      "id": "10",
+      "status": "SALE",
+      "title": "ACTIVE YOUTH",
+      "sku": "010",
+      "price": 88,
+      "old_price": 110,
+      "slug": "active_youth",
+      "images": {
+        "product_show": [
+          "/images/product10_1.avif",
+          "/images/product10_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p10_1.avif",
+          "/images/shopnow_p10_2.avif"
+        ]
+      },
+      "review": [
+        {
+          "name": "Ava Howard",
+          "rate": "4",
+          "title": "Highly recommend",
+          "review": "The online shopping experience was very easy and smooth. I was a bit hesitant if this is right for me. Though there is a lot of relevant information on their site I still wanted to double-check some product specs, like the material and dimensions. Their agents were so professional, attentive and provided very accurate information. Overall, I am quite satisfied with their quality.",
+          "date": "Apr 25, 2022",
+          "helpCount": 1
+        },
+        {
+          "name": "Annie Lee",
+          "rate": "5",
+          "title": "Lovely product",
+          "review": "Excellent seller (not my first purchase), fast delivery, product as described and glad to see they reduced their packaging amounts!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Dennis Hathaway",
+          "rate": "5",
+          "title": "Negative reviews are over critical",
+          "review": "Great quality, beautifully built and easy to use! I think a lot of the lower reviews are harsh. Experienced no problems mentioned by other reviewers. It is a bit expensive, but what you get is well worth the price. Wanted to try different colors but decided to go with white - was not disappointed at all!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Gregor Schulz",
+          "rate": "3",
+          "title": "Poor packaging",
+          "review": "While I understand business costs are high, I don't think it's a good reason to package something poorly. The box was torn when the product came. I don't know if it's the delivery service or poor packaging materials, but I definitely wasn't impressed.",
+          "date": "Apr 19, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Thum Ericsson",
+          "rate": "3",
+          "title": "Had better",
+          "review": "Bought similar products from other stores before, this one's alright. For its price and quality though, I'd still go with the previous store I got it from. They market this as “locally sourced” but I'm not sure if I believe it.",
+          "date": "Apr 11, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Emily May",
+          "rate": "4",
+          "title": "Wildly inexpensive for such great quality",
+          "review": "I was skeptical at first cause the price seemed way too good to be true but I decided to give it a shot. I’m so glad I did! You can't go wrong with this product. At first, I was tempted by its lovely looks and design. But I honestly wasn’t hoping for it to be so easy to use and long-lasting. Finally, I got ALL those things.",
+          "date": "Apr 07, 2022",
+          "helpCount": 0
+        }
       ],
-      "review": [],
       "category": [
-        ""
+        "Kids Collection"
       ]
     },
     {
-      "id": "",
-      "title": "",
-      "sku": "",
-      "price": ,
-      "slug": "",
-      "images": [
-        "/images/product5_1.avif",
-        "/images/product5_2.avif"
+      "id": "11",
+      "status": "SALE",
+      "title": "CLASSIC COMFORT",
+      "sku": "011",
+      "price": 72,
+      "old_price": 90,
+      "slug": "classic_comfort",
+      "images": {
+        "product_show": [
+          "/images/product11_1.avif",
+          "/images/product11_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p11_1.avif",
+          "/images/shopnow_p11_2.avif"
+        ]
+      },
+      "review": [
+        {
+          "name": "Ava Howard",
+          "rate": "4",
+          "title": "Highly recommend",
+          "review": "The online shopping experience was very easy and smooth. I was a bit hesitant if this is right for me. Though there is a lot of relevant information on their site I still wanted to double-check some product specs, like the material and dimensions. Their agents were so professional, attentive and provided very accurate information. Overall, I am quite satisfied with their quality.",
+          "date": "Apr 25, 2022",
+          "helpCount": 1
+        },
+        {
+          "name": "Sally Trumer",
+          "rate": "5",
+          "title": "Support your local business!",
+          "review": "This product is awesome - good quality and the materials are local. Wish there were more sites like this one that sold handcrafted products. Will definitely buy it again!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Dan Terez",
+          "rate": "5",
+          "title": "Amazing product",
+          "review": "This product is amazing. I bought it twice already and honestly it's a game changer, especially for its value. I used to get something similar from larger retail stores but it was just overpriced and the quality was average. No thanks! I'll get something way cheaper and higher quality from sites like these, thank you very much. Highly recommend this to everyone!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Annie Lee",
+          "rate": "5",
+          "title": "Lovely product",
+          "review": "Excellent seller (not my first purchase), fast delivery, product as described and glad to see they reduced their packaging amounts!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Suny Singhud",
+          "rate": "5",
+          "title": "Lovely decoration",
+          "review": "I use this as decoration in my living room and everyone loves it. Adds a little bit of fun as decoration and still looks smart. Had a bit of an issue with shipping, but Laura sorted it out no problem. 10/10 will order something again!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Jenny Price",
+          "rate": "4",
+          "title": "Loved it.",
+          "review": "My granddaughter had this for her 11th birthday. She loved it. Though it was smaller than we expected, but all in all it was ok.",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Bryce Callighan",
+          "rate": "5",
+          "title": "Pleasantly surprised!",
+          "review": "A friend recommended this item for me a few weeks ago. Was a bit skeptical at first but all the great reviews convinced me to try it. Gotta say, I'm glad I listened! The product was packaged well, arrived on time and the quality was great for this price range. Will buy again.",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Caitlyn Tanner",
+          "rate": "5",
+          "title": "First class",
+          "review": "Another great product from this site. Bought a bunch of other stuff, was never disappointed. Quality's great and delivery is always on time. Well on track to becoming my new favorite online shop!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Jack Richards",
+          "rate": "5",
+          "title": "Julia is awesome",
+          "review": "I don't leave a lot of reviews but I just had to for this store because I'm just so impressed! Julia is one of their sales agents and she was so helpful and knowledgeable through the entire shopping experience (which was awesome). I chatted with her after 8 pm and she walked me through all the possible options, was eager to understand my needs and suggested the best product. I look forward to a smooth delivery!",
+          "date": "Apr 07, 2022",
+          "helpCount": 2
+        },
+        {
+          "name": "Barry Tate",
+          "rate": "3",
+          "title": "Slow delivery",
+          "review": "Everything is ok with the product, it just took too long to deliver. It said the delivery would take up to five days but it was delayed and arrived a week late. I needed it sooner than that because it was a gift. Oh well.",
+          "date": "Apr 02, 2022",
+          "helpCount": 0
+        }
       ],
-      "review": [],
       "category": [
-        ""
+        "Kids Collection"
       ]
     },
     {
-      "id": "",
-      "title": "",
-      "sku": "",
-      "price": ,
-      "slug": "",
-      "images": [
-        "/images/product5_1.avif",
-        "/images/product5_2.avif"
+      "id": "12",
+      "status": "SALE",
+      "title": "JUNIOR SPORT",
+      "sku": "012",
+      "price": 72,
+      "old_price": 90,
+      "slug": "junior_sport",
+      "images": {
+        "product_show": [
+          "/images/product12_1.avif",
+          "/images/product12_2.avif"
+        ],
+        "shopnow": [
+          "/images/shopnow_p12_1.avif",
+          "/images/shopnow_p12_2.avif"
+        ]
+      },
+      "review": [
+        {
+          "name": "Ava Howard",
+          "rate": "4",
+          "title": "Highly recommend",
+          "review": "The online shopping experience was very easy and smooth. I was a bit hesitant if this is right for me. Though there is a lot of relevant information on their site I still wanted to double-check some product specs, like the material and dimensions. Their agents were so professional, attentive and provided very accurate information. Overall, I am quite satisfied with their quality.",
+          "date": "Apr 25, 2022",
+          "helpCount": 1
+        },
+        {
+          "name": "Ingrid Brown",
+          "rate": "2",
+          "title": "Too pricey",
+          "review": "Was not impressed with the quality at this price range. The delivery came on time, but the packaging was cheap and everything inside was shaken. Definitely not worth the price tag!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Sally Trumer",
+          "rate": "5",
+          "title": "Support your local business!",
+          "review": "This product is awesome - good quality and the materials are local. Wish there were more sites like this one that sold handcrafted products. Will definitely buy it again!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Todd Boward",
+          "rate": "4",
+          "title": "Great present",
+          "review": "Very good quality for its price. Got this as a gift for my nan, she loved it! Will definitely keep this site in mind when gift shopping the next time.",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Dan Terez",
+          "rate": "5",
+          "title": "Amazing product",
+          "review": "This product is amazing. I bought it twice already and honestly it's a game changer, especially for its value. I used to get something similar from larger retail stores but it was just overpriced and the quality was average. No thanks! I'll get something way cheaper and higher quality from sites like these, thank you very much. Highly recommend this to everyone!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Suny Singhud",
+          "rate": "5",
+          "title": "Lovely decoration",
+          "review": "I use this as decoration in my living room and everyone loves it. Adds a little bit of fun as decoration and still looks smart. Had a bit of an issue with shipping, but Laura sorted it out no problem. 10/10 will order something again!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Bryce Callighan",
+          "rate": "5",
+          "title": "Pleasantly surprised!",
+          "review": "A friend recommended this item for me a few weeks ago. Was a bit skeptical at first but all the great reviews convinced me to try it. Gotta say, I'm glad I listened! The product was packaged well, arrived on time and the quality was great for this price range.",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Caitlyn Tanner",
+          "rate": "5",
+          "title": "First class",
+          "review": "Another great product from this site. Bought a bunch of other stuff, was never disappointed. Quality's great and delivery is always on time. Well on track to becoming my new favorite online shop!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Annie Lee",
+          "rate": "5",
+          "title": "Lovely product",
+          "review": "Excellent seller (not my first purchase), fast delivery, product as described and glad to see they reduced their packaging amounts!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Dennis Hathaway",
+          "rate": "5",
+          "title": "Negative reviews are over critical",
+          "review": "Great quality, beautifully built and easy to use! I think a lot of the lower reviews are harsh. Experienced no problems mentioned by other reviewers. It is a bit expensive, but what you get is well worth the price. Wanted to try different colors but decided to go with white - was not disappointed at all!",
+          "date": "Apr 22, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "James Garden",
+          "rate": "3",
+          "title": "Looked better in the pictures",
+          "review": "Everything's alright with it, just looked better in the pictures. My house is a bit dim and doesn't get a lot of sunlight, so the product loses a bit of its flair. Make sure you have a well-lit home if you're getting this.",
+          "date": "Apr 21, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Trudy Green",
+          "rate": "2",
+          "title": "Wrong model",
+          "review": "Bought this as a gift for my son's birthday. Even though the description said it was the right model, it wasn't. My son was upset because he already had one of these from before, so we had to return it.",
+          "date": "Apr 20, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Gregor Schulz",
+          "rate": "3",
+          "title": "Poor packaging",
+          "review": "While I understand business costs are high, I don't think it's a good reason to package something poorly. The box was torn when the product came. I don't know if it's the delivery service or poor packaging materials, but I definitely wasn't impressed.",
+          "date": "Apr 19, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Thum Ericsson",
+          "rate": "3",
+          "title": "Had better",
+          "review": "Bought similar products from other stores before, this one's alright. For its price and quality though, I'd still go with the previous store I got it from. They market this as “locally sourced” but I'm not sure if I believe it.",
+          "date": "Apr 11, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Jack Richards",
+          "rate": "5",
+          "title": "Julia is awesome",
+          "review": "I don't leave a lot of reviews but I just had to for this store because I'm just so impressed! Julia is one of their sales agents and she was so helpful and knowledgeable through the entire shopping experience (which was awesome). I chatted with her after 8 pm and she walked me through all the possible options, was eager to understand my needs and suggested the best product. I look forward to a smooth delivery!",
+          "date": "Apr 07, 2022",
+          "helpCount": 2
+        },
+        {
+          "name": "Emily May",
+          "rate": "4",
+          "title": "Wildly inexpensive for such great quality",
+          "review": "I was skeptical at first cause the price seemed way too good to be true but I decided to give it a shot. I’m so glad I did! You can't go wrong with this product. At first, I was tempted by its lovely looks and design. But I honestly wasn’t hoping for it to be so easy to use and long-lasting. Finally, I got ALL those things.",
+          "date": "Apr 07, 2022",
+          "helpCount": 0
+        },
+        {
+          "name": "Barry Tate",
+          "rate": "3",
+          "title": "Slow delivery",
+          "review": "Everything is ok with the product, it just took too long to deliver. It said the delivery would take up to five days but it was delayed and arrived a week late. I needed it sooner than that because it was a gift. Oh well.",
+          "date": "Apr 02, 2022",
+          "helpCount": 0
+        }
       ],
-      "review": [],
       "category": [
-        ""
+        "Kids Collection",
+        "Best Sellers"
       ]
     }
   ],
@@ -281,12 +632,4 @@
   "profile": {
     "name": "typicode"
   }
-}
-{
-  "name": "",
-  "rate": "",
-  "title": "",
-  "review": "",
-  "date": "",
-  "helpCount": 0
 }
