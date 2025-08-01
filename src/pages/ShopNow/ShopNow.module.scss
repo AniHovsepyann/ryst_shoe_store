@@ -54,6 +54,13 @@ section {
             gap: 12px;
             font-size: 12px;
             padding-top: 15px;
+
+            button {
+              text-align: left;
+              background-color: #fff;
+              border: none;
+              cursor: pointer;
+            }
           }
         }
 

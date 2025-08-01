@@ -13,15 +13,27 @@ const productsSlice = createSlice({
   initialState: {
     products: [],
     loading: false,
-    error: null
+    error: null,
+    filter: "all"
   },
   reducers: {
-    showType(state, action) {
-      return action.type;
+    chooseCategory(state, { payload }) {
+      state.filter = payload
     }
   },
   selectors: {
-    getAllProducts: (state) => state
+    getAllProducts: (state) => {
+      const filteredProducts =
+        state.filter === "all"
+          ? state.products
+          : state.products.filter(elm => elm.category.includes(state.filter));
+
+      return {
+        ...state,
+        products: filteredProducts,
+      };
+    }
+
   },
   extraReducers: (builder) => {
     builder
@@ -42,5 +54,5 @@ const productsSlice = createSlice({
 
 
 export default productsSlice.reducer
-export const { showType } = productsSlice.actions
+export const { chooseCategory } = productsSlice.actions
 export const { getAllProducts } = productsSlice.selectors

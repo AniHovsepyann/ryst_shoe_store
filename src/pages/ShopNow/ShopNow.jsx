@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './ShopNow.module.scss';
 import SortDropdown from './SortDropdown';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProducts, getAsyncProducts, showType } from '../../features/productsSlice';
+import { chooseCategory, getAllProducts, getAsyncProducts } from '../../features/productsSlice';
 
 export default function ShopNow() {
   const [minPrice, setMinPrice] = useState(0);
@@ -46,11 +46,11 @@ export default function ShopNow() {
               <p>Browse by</p>
             </div>
             <div className={styles.categories}>
-              <span>All Products</span>
-              <span>Best Sellers</span>
-              <span>Limited Edition</span>
-              <span>Performance Series</span>
-              <span>Kids Collection</span>
+              <button onClick={()=>{dispatch(chooseCategory("all"))}}>All Products</button>
+              <button onClick={()=>{dispatch(chooseCategory("Best Sellers"))}}>Best Sellers</button>
+              <button onClick={()=>{dispatch(chooseCategory("Limited Edition"))}}>Limited Edition</button>
+              <button onClick={()=>{dispatch(chooseCategory("Performance Series"))}}>Performance Series</button>
+              <button onClick={()=>{dispatch(chooseCategory("Kids Collection"))}}>Kids Collection</button>
             </div>
           </div>
 
@@ -127,7 +127,6 @@ export default function ShopNow() {
             </div>
           </div>
         </div>
-
         <div className={styles.products}>
           <div className={styles.top}>
             <span>4 products</span>
