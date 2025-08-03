@@ -2,14 +2,16 @@ import { useState, useEffect } from 'react';
 import styles from './ShopNow.module.scss';
 import SortDropdown from './SortDropdown';
 import { useDispatch, useSelector } from 'react-redux';
-import { chooseCategory, getAllProducts, getAsyncProducts } from '../../features/productsSlice';
+import { changePriceRange, chooseCategory, getAllProducts, getAsyncProducts } from '../../features/productsSlice';
 
 export default function ShopNow() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(180);
+  console.log(maxPrice);
+
   const [isPriceOpened, setIsPriceOpened] = useState(true);
   const dispatch = useDispatch()
-  const { products, error, loading } = useSelector(getAllProducts)
+  const { products, filterByPrice, rangeMax } = useSelector(getAllProducts)
   useEffect(() => {
     dispatch(getAsyncProducts())
   }, []);
@@ -28,6 +30,18 @@ export default function ShopNow() {
     }
   }, [maxPrice]);
   console.log(products);
+  console.log(filterByPrice);
+
+  // useEffect(() => {
+  //   setMinPrice(0);
+  //   setMaxPrice(filterByPrice.max || 0);
+  // }, [filterByPrice.max]);
+useEffect(() => {
+  setMinPrice(0);
+  setMaxPrice(rangeMax);
+  dispatch(changePriceRange({ min: 0, max: rangeMax }));
+}, [rangeMax]);
+
 
   return (
     <section>
@@ -46,11 +60,11 @@ export default function ShopNow() {
               <p>Browse by</p>
             </div>
             <div className={styles.categories}>
-              <button onClick={()=>{dispatch(chooseCategory("all"))}}>All Products</button>
-              <button onClick={()=>{dispatch(chooseCategory("Best Sellers"))}}>Best Sellers</button>
-              <button onClick={()=>{dispatch(chooseCategory("Limited Edition"))}}>Limited Edition</button>
-              <button onClick={()=>{dispatch(chooseCategory("Performance Series"))}}>Performance Series</button>
-              <button onClick={()=>{dispatch(chooseCategory("Kids Collection"))}}>Kids Collection</button>
+              <button onClick={() => { dispatch(chooseCategory("all"))}}>All Products</button>
+              <button onClick={() => { dispatch(chooseCategory("Best Sellers"))}}>Best Sellers</button>
+              <button onClick={() => { dispatch(chooseCategory("Limited Edition"))}}>Limited Edition</button>
+              <button onClick={() => { dispatch(chooseCategory("Performance Series"))}}>Performance Series</button>
+              <button onClick={() => { dispatch(chooseCategory("Kids Collection"))}}>Kids Collection</button>
             </div>
           </div>
 
@@ -80,20 +94,38 @@ export default function ShopNow() {
                       id="minSlider"
                       className={styles.minSlider}
                       min="0"
-                      max="180"
+                      max={rangeMax}
                       step="1"
                       value={minPrice}
-                      onChange={(e) => setMinPrice(Number(e.target.value))}
+                      // onChange={(e) => {
+                      //   setMinPrice(Number(e.target.value));
+                      //   dispatch(changePriceRange({ min: minPrice, max: maxPrice }))
+                      // }}
+                      onInput={(e) => {
+                        const value = Number(e.target.value);
+                        setMinPrice(Number(e.target.value));
+                        dispatch(changePriceRange({ min: value, max:  maxPrice}));
+                      }}
+
                     />
                     <input
                       type="range"
                       id="maxSlider"
                       className={styles.maxSlider}
                       min="0"
-                      max="180"
+                      max={rangeMax}
                       step="1"
                       value={maxPrice}
-                      onChange={(e) => setMaxPrice(Number(e.target.value))}
+                      // onChange={(e) => {
+                      //   setMaxPrice(Number(e.target.value));
+                      //   dispatch(changePriceRange({ min: minPrice, max: maxPrice }))
+                      // }}
+                      onInput={(e) => {
+                        const value = Number(e.target.value);
+                        setMaxPrice(Number(e.target.value));
+                        dispatch(changePriceRange({ min: minPrice, max: value }));
+                      }}
+
                     />
                   </div>
                   <div className={styles.values}>
@@ -103,7 +135,7 @@ export default function ShopNow() {
                         className={styles["lower-range"]}
                         id="minInput"
                         min="0"
-                        max="180"
+                        max={rangeMax}
                         step="1"
                         value={minPrice}
                         onChange={(e) => setMinPrice(Number(e.target.value))}
@@ -115,7 +147,7 @@ export default function ShopNow() {
                         className={styles["raise-range"]}
                         id="maxInput"
                         min="0"
-                        max="180"
+                        max={rangeMax}
                         step="1"
                         value={maxPrice}
                         onChange={(e) => setMaxPrice(Number(e.target.value))}
@@ -129,34 +161,44 @@ export default function ShopNow() {
         </div>
         <div className={styles.products}>
           <div className={styles.top}>
-            <span>4 products</span>
+            <span>{products.length} products</span>
             <SortDropdown />
           </div>
           <div className={styles.items}>
             {
-              products.map((elm) => {
-                return (
-                  <div className={styles.item}>
-                    <div className={styles["image-container"]}>
-                      <img className={styles.image1} src={elm.images.shopnow[0]} alt={elm.title} />
-                      <img className={styles.image2} src={elm.images.shopnow[1]} alt={elm.title} />
+              products.length
+                ?
+                products.map((elm) => {
+                  return (
+                    <div key={elm.id} className={styles.item}>
+                      <div className={styles["image-container"]}>
+                        <img className={styles.image1} src={elm.images.shopnow[0]} alt={elm.title} />
+                        <img className={styles.image2} src={elm.images.shopnow[1]} alt={elm.title} />
+                      </div>
+                      <div className={styles.info}>
+                        <h3>{elm.title}</h3>
+                        <p className={styles["price-pt"]}>
+                          <ins>${elm.price.toFixed(2)}</ins>
+                          &nbsp;
+                          {
+                            elm.old_price ?
+                              <del>${elm.old_price.toFixed(2)}</del>
+                              :
+                              null
+                          }
+                        </p>
+                      </div>
                     </div>
-                    <div className={styles.info}>
-                      <h3>{elm.title}</h3>
-                      <p className={styles["price-pt"]}>
-                        <ins>${elm.price.toFixed(2)}</ins>
-                        &nbsp;
-                        {
-                          elm.old_price ?
-                            <del>${elm.old_price.toFixed(2)}</del>
-                            :
-                            null
-                        }
-                      </p>
-                    </div>
+                  )
+                })
+                :
+                <div className={styles["no-items"]}>
+                  <div className={styles.text}>
+                    <h2>We couldn't find any matches</h2>
+                    <p>Try different filters or another category.</p>
                   </div>
-                )
-              })
+                  <button>Clear Filters</button>
+                </div>
             }
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function Footer() {
     confirm: boolean().oneOf([true], "ⓘ Check the box to continue.")
   })
   const handleSubmit = (value) => {
-    console.log(value);
+    // console.log(value);
 
   }
 

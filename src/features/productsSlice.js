@@ -14,26 +14,17 @@ const productsSlice = createSlice({
     products: [],
     loading: false,
     error: null,
-    filter: "all"
+    rangeMax: 0,
+    filterByCategory: "all",
+    filterByPrice: {}
   },
   reducers: {
     chooseCategory(state, { payload }) {
-      state.filter = payload
+      state.filterByCategory = payload
+    },
+    changePriceRange(state, { payload: { min, max } }) {
+      state.filterByPrice = { min, max }
     }
-  },
-  selectors: {
-    getAllProducts: (state) => {
-      const filteredProducts =
-        state.filter === "all"
-          ? state.products
-          : state.products.filter(elm => elm.category.includes(state.filter));
-
-      return {
-        ...state,
-        products: filteredProducts,
-      };
-    }
-
   },
   extraReducers: (builder) => {
     builder
@@ -43,16 +34,48 @@ const productsSlice = createSlice({
       .addCase(getAsyncProducts.fulfilled, (state, action) => {
         state.loading = false
         state.products = action.payload
+        state.filterByPrice = { min: 0, max: Math.max(...state.products.map(product => product.price)) }
+
+
       })
       .addCase(getAsyncProducts.rejected, (state, action) => {
         state.loading = false
         state.error = action.error
       })
-  }
+  },
+  selectors: {
+    getAllProducts: (state) => {
+      const filteredProducts =
+        state.filterByCategory === "all"
+          ? state.products
+          : state.products.filter(elm => elm.category.includes(state.filterByCategory));
+      const rangeMax = Math.max(...filteredProducts.map(product => product.price));
+
+
+      const filteredByPrice = filteredProducts.filter(
+        elm => elm?.price >= state.filterByPrice.min && elm.price <= state.filterByPrice.max
+      );
+
+      // console.log(state.filterByPrice.max);
+
+      // const maxPrice = Math.max(...filteredByPrice.map(product => product.price))
+      const maxPrice = filteredByPrice.length
+        ? Math.max(...filteredByPrice.map(product => product.price))
+        : 0;
+
+      return {
+        ...state,
+        filterByPrice: { min: 0, max: maxPrice },
+        products: filteredByPrice,
+        rangeMax
+      };
+    }
+
+  },
 
 })
 
 
 export default productsSlice.reducer
-export const { chooseCategory } = productsSlice.actions
+export const { chooseCategory, changePriceRange } = productsSlice.actions
 export const { getAllProducts } = productsSlice.selectors
