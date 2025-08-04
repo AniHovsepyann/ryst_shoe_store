@@ -26,3 +26,20 @@ nav ul {
 html {
   scroll-behavior: smooth;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .location {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .category {
+    font-size: 20px;
+  }
+}

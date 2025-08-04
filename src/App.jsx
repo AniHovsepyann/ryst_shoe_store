@@ -6,6 +6,7 @@ import Layouts from './components/Layouts/Layouts'
 import Post, { getSpeacialPost } from './pages/Post/Post'
 import { About, AboutUs, Blog, ErrorPage, Home, Login, Product, SearchResults, ShopNow } from './pages'
 import { getPosts } from './pages/About/About'
+import { getProduct } from './pages/Product/Product'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +19,7 @@ const router = createBrowserRouter(
       <Route element={<Login />} path={LOGIN} />
       <Route element={<ShopNow />} path={SHOPNOW} />
       <Route element={<SearchResults />} path={SEARCHRESULTS} />
-      <Route element={<Product />} path={PRODUCT} />
+      <Route element={<Product />} path={PRODUCT} loader={getProduct} />
       <Route element={<AboutUs />} path={ABOUTUS} />
     </Route>
   )

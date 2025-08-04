@@ -6,7 +6,7 @@ const ROUTES = {
   SEARCHRESULTS: "/searchresults",
   LOGIN: "/login",
   SHOPNOW: "/shopnow",
-  PRODUCT: "/product",
+  PRODUCT: "/shopnow/:id",
   ERRORPAGE: '*',
 }
 

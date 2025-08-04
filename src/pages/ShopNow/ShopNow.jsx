@@ -3,11 +3,11 @@ import styles from './ShopNow.module.scss';
 import SortDropdown from './SortDropdown';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePriceRange, chooseCategory, getAllProducts, getAsyncProducts } from '../../features/productsSlice';
+import { NavLink } from 'react-router-dom';
 
 export default function ShopNow() {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(180);
-  console.log(maxPrice);
 
   const [isPriceOpened, setIsPriceOpened] = useState(true);
   const dispatch = useDispatch()
@@ -29,23 +29,21 @@ export default function ShopNow() {
       setMinPrice(maxPrice);
     }
   }, [maxPrice]);
-  console.log(products);
-  console.log(filterByPrice);
 
   // useEffect(() => {
   //   setMinPrice(0);
   //   setMaxPrice(filterByPrice.max || 0);
   // }, [filterByPrice.max]);
-useEffect(() => {
-  setMinPrice(0);
-  setMaxPrice(rangeMax);
-  dispatch(changePriceRange({ min: 0, max: rangeMax }));
-}, [rangeMax]);
+  useEffect(() => {
+    setMinPrice(0);
+    setMaxPrice(rangeMax);
+    dispatch(changePriceRange({ min: 0, max: rangeMax }));
+  }, [rangeMax]);
 
 
   return (
     <section>
-      <div className={styles.header}>
+      <div className={`header ${styles.header}`}>
         <div className={styles.location}>
           <span>Home</span>
           <i className="bi bi-chevron-right"></i>
@@ -60,11 +58,11 @@ useEffect(() => {
               <p>Browse by</p>
             </div>
             <div className={styles.categories}>
-              <button onClick={() => { dispatch(chooseCategory("all"))}}>All Products</button>
-              <button onClick={() => { dispatch(chooseCategory("Best Sellers"))}}>Best Sellers</button>
-              <button onClick={() => { dispatch(chooseCategory("Limited Edition"))}}>Limited Edition</button>
-              <button onClick={() => { dispatch(chooseCategory("Performance Series"))}}>Performance Series</button>
-              <button onClick={() => { dispatch(chooseCategory("Kids Collection"))}}>Kids Collection</button>
+              <button onClick={() => { dispatch(chooseCategory("all")) }}>All Products</button>
+              <button onClick={() => { dispatch(chooseCategory("Best Sellers")) }}>Best Sellers</button>
+              <button onClick={() => { dispatch(chooseCategory("Limited Edition")) }}>Limited Edition</button>
+              <button onClick={() => { dispatch(chooseCategory("Performance Series")) }}>Performance Series</button>
+              <button onClick={() => { dispatch(chooseCategory("Kids Collection")) }}>Kids Collection</button>
             </div>
           </div>
 
@@ -104,7 +102,7 @@ useEffect(() => {
                       onInput={(e) => {
                         const value = Number(e.target.value);
                         setMinPrice(Number(e.target.value));
-                        dispatch(changePriceRange({ min: value, max:  maxPrice}));
+                        dispatch(changePriceRange({ min: value, max: maxPrice }));
                       }}
 
                     />
@@ -171,11 +169,11 @@ useEffect(() => {
                 products.map((elm) => {
                   return (
                     <div key={elm.id} className={styles.item}>
-                      <div className={styles["image-container"]}>
+                      <NavLink to={`${elm.id}`} className={styles["image-container"]}>
                         <img className={styles.image1} src={elm.images.shopnow[0]} alt={elm.title} />
                         <img className={styles.image2} src={elm.images.shopnow[1]} alt={elm.title} />
-                      </div>
-                      <div className={styles.info}>
+                      </NavLink>
+                      <NavLink to={`${elm.id}`} className={styles.info}>
                         <h3>{elm.title}</h3>
                         <p className={styles["price-pt"]}>
                           <ins>${elm.price.toFixed(2)}</ins>
@@ -187,7 +185,7 @@ useEffect(() => {
                               null
                           }
                         </p>
-                      </div>
+                      </NavLink>
                     </div>
                   )
                 })
