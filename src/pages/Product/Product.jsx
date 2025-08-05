@@ -18,6 +18,11 @@ export default function Product() {
         <span className={styles.category}>All Products</span>
       </div>
       <SimpleSlider product={product} />
+      <section className={styles["product-info-section"]}>
+        <div className={styles.content}>
+
+        </div>
+      </section>
     </>
   )
 }

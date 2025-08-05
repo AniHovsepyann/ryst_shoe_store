@@ -1,5 +1,14 @@
-.header{
+.header {
   padding-inline: 60px;
   padding-top: 60px;
+}
 
+.product-info-section {
+  padding-top: 60px;
+
+  .content {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+  }
 }
