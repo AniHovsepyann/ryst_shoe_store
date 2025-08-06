@@ -12,12 +12,14 @@ export default function Product() {
       <div className={`header ${styles.header}`}>
         <div className={styles.location}>
           <span>Home</span>
-          <i className="bi bi-chevron-right"></i>
+          /
           <span>All Products</span>
+          /
+          <span className={styles.gray}>{product.title}</span>
         </div>
-        <span className={styles.category}>All Products</span>
+        {/* <span className={styles.category}>All Products</span> */}
       </div>
-      <SimpleSlider product={product} />
+      <SimpleSlider product={product} styles={styles} />
       <section className={styles["product-info-section"]}>
         <div className={styles.content}>
 

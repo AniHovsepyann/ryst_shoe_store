@@ -1,6 +1,7 @@
+@use "../../sass/mixins" as *;
+
 .header {
-  padding-inline: 60px;
-  padding-top: 60px;
+  @include header(60px, 60px, 60px);
 }
 
 .product-info-section {
@@ -11,4 +12,119 @@
     display: flex;
     flex-direction: column;
   }
+}
+
+.product-data-in-slider {
+  z-index: 1;
+  position: absolute;
+  top: 45px;
+  right: 60px;
+  width: 320px;
+  padding: 20px 20px 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+
+  h3 {
+    margin-bottom: 17px;
+  }
+
+  p.sku {
+    margin-bottom: 15px;
+
+    span {}
+  }
+
+  .price-pt {}
+
+  .quantity-pt {
+    .input-container {
+      width: 76.3px;
+      height: 46.39px;
+      position: relative;
+      margin-bottom: 32px;
+
+      input {
+        font-weight: 500;
+        padding: 1px 32px 1px 16px;
+        border: 1px solid #c9c9c9;
+        font: var(--font-oswald-sans-serif-16px);
+        outline: none;
+        width: 100%;
+        height: 100%;
+
+
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
+      .spinner {
+        height: 37px;
+        right: 5px;
+        top: 5px;
+        width: 16px;
+        position: absolute;
+        background: white;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .button {
+          // opacity: 0;
+          background-color: transparent !important;
+          border: none !important;
+          outline: none !important;
+          padding: 0;
+          display: block;
+          margin: 0 !important;
+          height: max-content;
+          cursor: pointer;
+          transition: .3s ease-in-out;
+
+          &.up {}
+
+          &.down {}
+
+          .black {
+            color: black;
+          }
+
+
+          &[disabled] {
+            cursor: default;
+          }
+        }
+      }
+
+      input:focus {
+        &+.spinner {
+          .button {
+            opacity: 1;
+          }
+
+          [disabled] {
+            opacity: 0.5;
+          }
+        }
+      }
+
+      &:hover {
+        .button {
+          opacity: 1;
+        }
+
+        [disabled] {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
 }

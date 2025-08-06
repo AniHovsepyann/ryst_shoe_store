@@ -1,12 +1,12 @@
+@use "../../sass/mixins" as *;
+
 section {
   display: flex;
   flex-direction: column;
   // gap: 46px;
 
   .header {
-    padding-inline: 20px;
-    padding-top: 40px;
-
+    @include header(20px, 40px, 0);
   }
 
   .main {

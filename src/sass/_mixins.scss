@@ -209,7 +209,6 @@
   }
 }
 
-
 @mixin lil-section-name {
   padding-block: 5.833333vw 1.666667vw;
   display: flex;
@@ -219,5 +218,29 @@
 
   a {
     @include button-fromtransparent-to-yellowblack(0.625vw);
+  }
+}
+
+@mixin header($p-inline, $p-top, $p-bottom) {
+  padding-bottom: $p-bottom;
+  padding-top: $p-top;
+  padding-inline: $p-inline;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .location {
+    gap: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .gray {
+      opacity: 0.6;
+    }
+  }
+
+  .category {
+    font-size: 20px;
   }
 }
