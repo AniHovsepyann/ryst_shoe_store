@@ -93,46 +93,54 @@ export default function SimpleSlider({ product, styles }) {
   return (
     <section className="slider-container-product">
       <div className={styles["product-data-in-slider"]}>
-        <h3>{product.title}</h3>
-        <p className={styles.sku}>
-          SKU: <span>{product.sku}</span>
-        </p>
-        <div className="price-pt">
-          <ins>${product.price}</ins>{" "}
-          <del>${product.old_price ?? ""}</del>
-        </div>
-
-        <div className={styles["quantity-pt"]}>
-          <label>Quantity</label>
-          <div className={styles["input-container"]}>
-            <input
-              type="number"
-              className={styles.input}
-              value={quantity}
-              onChange={handleInputChange}
-              min={1}
-            />
-            <div className={styles.spinner}>
-              <button
-                type="button"
-                className={`${styles.up} ${styles.button}`}
-                onClick={handleDecrement}
-                disabled={quantity <= 1}
-              >
-                <i className={`bi bi-dash-lg ${styles.black}`}></i>
-              </button>
-              <button
-                type="button"
-                className={`${styles.down} ${styles.button}`}
-                onClick={handleIncrement}
-              >
-                <i className={`bi bi-plus-lg ${styles.black}`}></i>
-              </button>
+        <div className={styles.top}>
+          <h3>{product.title}</h3>
+          <p className={styles.sku}>
+            SKU: <span>{product.sku}</span>
+          </p>
+          <div className={styles["price-pt"]}>
+            <ins>${product.price}</ins>{" "}
+            <del>{product.old_price ? `$${product.old_price}` : ""}</del>
+          </div>
+          <div className={styles["quantity-pt"]}>
+            <label>Quantity</label>
+            <div className={styles["input-container"]}>
+              <input
+                type="number"
+                className={styles.input}
+                value={quantity}
+                onChange={handleInputChange}
+                min={1}
+              />
+              <div className={styles.spinner}>
+                <button
+                  type="button"
+                  className={`${styles.down} ${styles.button}`}
+                  onClick={handleIncrement}
+                >
+                  <i className={`bi bi-plus-lg ${styles.black}`}></i>
+                </button>
+                <button
+                  type="button"
+                  className={`${styles.up} ${styles.button}`}
+                  onClick={handleDecrement}
+                  disabled={quantity <= 1}
+                >
+                  <i className={`bi bi-dash-lg ${styles.black}`}></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
+        <div className={styles.bottom}>
+          <div className={styles["addtocard-or-addtofavorites"]}>
+            <button className={styles['add-to-cart']}>ADD TO CART</button>
+            <button className={styles['add-to-favs']}>
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+        </div>
       </div>
-
       <Slider {...settings}>
         <div>
           <img
