@@ -1,59 +1,3 @@
-// import React, { Component } from "react";
-// import Slider from "react-slick";
-// import "./Slider.scss"
-
-// export default function SimpleSlider({ product, styles }) {
-//   const settings = {
-//     dots: true,
-//     fade: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     waitForAnimate: false
-//   };
-//   return (
-//     <section className="slider-container-product">
-//       <div className={styles["product-data-in-slider"]}>
-//         <h3>{product.title}</h3>
-//         <p className={styles.sku}>SKU: <span>{product.sku}</span></p>
-//         <div className="price-pt"><ins>${product.price}</ins> <del>${product.old_price ?? ""}</del></div>
-//         <div className={styles["quantity-pt"]}>
-//           <label>Quantity</label>
-//           <div className={styles["input-container"]}>
-//             <input value="1" type="number" className={styles.input} />
-//             <div className={styles.spinner}>
-//               <button type="button" className={`${styles.up} ${styles.button}`}>
-//                 <i className={`bi bi-dash-lg ${styles.black}`}></i>
-//               </button>
-//               <button type="button" className={`${styles.down} ${styles.button}`}>
-//                 <i className={`bi bi-plus-lg ${styles.black}`}></i>
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <Slider {...settings}>
-//         <div>
-//           <img src={product.images.product_show[0]} alt={product.title} />
-//         </div>
-//         <div>
-//           <img src={product.images.product_show[1]} alt={product.title} />
-//         </div>
-//       </Slider>
-//       {/* <Slider {...settings}>
-//         {product.images.product_show.map((img, index) => (
-//           <div key={index}>
-//             <img src={img} alt={`${product.title} ${index + 1}`} />
-//           </div>
-//         ))}
-//       </Slider> */}
-
-//     </section>
-//   );
-// }
-
-
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "./Slider.scss";
@@ -136,9 +80,10 @@ export default function SimpleSlider({ product, styles }) {
           <div className={styles["addtocard-or-addtofavorites"]}>
             <button className={styles['add-to-cart']}>ADD TO CART</button>
             <button className={styles['add-to-favs']}>
-              <i class="bi bi-heart"></i>
+              <i className="bi bi-heart fs-5"></i>
             </button>
           </div>
+          <button className={styles['buy-now']}>BUY NOW</button>
         </div>
       </div>
       <Slider {...settings}>
