@@ -1,3 +1,5 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
 import React, { useState } from "react";
 import Slider from "react-slick";
 import "./Slider.scss";
@@ -101,16 +103,6 @@ export default function SimpleSlider({ product, styles }) {
         </div>
       </Slider>
 
-      {/* Եթե ուզում ես բոլոր նկարները ցիկլով ավելացնել՝ այս մեկն ակտիվացրու */}
-      {/*
-      <Slider {...settings}>
-        {product.images.product_show.map((img, index) => (
-          <div key={index}>
-            <img src={img} alt={`${product.title} ${index + 1}`} />
-          </div>
-        ))}
-      </Slider>
-      */}
     </section>
   );
 }

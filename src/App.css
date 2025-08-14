@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 a {
   color: black;
   text-decoration: none;
@@ -26,4 +24,3 @@ nav ul {
 html {
   scroll-behavior: smooth;
 }
-
