@@ -35,7 +35,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className={styles.signs}>
-              <i className="bi bi-heart"></i>
+              <i className="bi bi-heart fs-5"></i>
               <i className="bi bi-cart"></i>
             </div>
             <div className={styles.buttons}>

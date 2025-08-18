@@ -7,11 +7,58 @@
 
 .product-info-section {
   padding-top: 60px;
+  display: grid;
+  justify-content: center;
 
-  .content {
+  ul.content {
     padding: 30px 40px;
     display: flex;
     flex-direction: column;
+    width: 980px;
+
+    &>li {
+      line-height: 1.6;
+      padding-block: 24px;
+      border-bottom: 1px solid rgba(217, 217, 217);
+
+      &:last-child {
+        border: none;
+      }
+
+      &::marker {
+        content: "";
+      }
+
+      .data-name {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 12px;
+        }
+
+        button {
+          background-color: transparent;
+          border: none;
+
+          i {}
+        }
+      }
+
+      .text {
+        padding-top: 17px;
+
+        ul {
+          display: flex;
+          justify-content: end;
+
+          li {
+            width: 844px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -197,7 +244,7 @@
       &:hover {
         text-decoration: underline;
       }
-      
+
     }
   }
 }

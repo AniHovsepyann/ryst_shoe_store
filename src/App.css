@@ -24,3 +24,7 @@ nav ul {
 html {
   scroll-behavior: smooth;
 }
+
+.fs-5 {
+  font-size: 1.041667vw;
+}
