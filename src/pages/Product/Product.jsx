@@ -2,6 +2,7 @@ import axios from 'axios';
 import styles from "./Product.module.scss"
 import { useLoaderData, useParams } from 'react-router-dom'
 import SimpleSlider from './Slider/Slider';
+import Reviews from './ReviewSlider/ReviewSlider';
 
 export default function Product() {
   const product = useLoaderData()
@@ -25,7 +26,7 @@ export default function Product() {
           <li>
             <div className={styles["data-name"]}>
               <span>PRODUCT INFO</span>
-              <button><i class="bi bi-plus-lg"></i></button>
+              <button><i className="bi bi-plus-lg"></i></button>
             </div>
             <div className={styles.text}>
               <ul>
@@ -38,7 +39,7 @@ export default function Product() {
           <li>
             <div className={styles["data-name"]}>
               <span>RETURN & REFUND POLICY</span>
-              <button><i class="bi bi-plus-lg"></i></button>
+              <button><i className="bi bi-plus-lg"></i></button>
             </div>
             <div className={styles.text}>
               <ul>
@@ -51,7 +52,7 @@ export default function Product() {
           <li>
             <div className={styles["data-name"]}>
               <span>SHIPPING INFO</span>
-              <button><i class="bi bi-plus-lg"></i></button>
+              <button><i className="bi bi-plus-lg"></i></button>
             </div>
             <div className={styles.text}>
               <ul>
@@ -63,7 +64,32 @@ export default function Product() {
           </li>
         </ul>
       </section>
-      
+      {
+        String(product?.review) ?
+          <>
+            <section className={styles["review-section"]}>
+              <div className="count-and-filter">
+                <span className={styles.count}>{product.review.length} review</span>
+                <div className={styles.sorts}>
+
+                </div>
+              </div>
+              <Reviews reviews={product.review}/>
+              {/* <div className={styles.reviews}>
+              {
+                product.review.map((elm, ind, arr) => {
+                  return (
+                      <div className={styles.review}>
+
+                      </div>
+                  )
+                })
+              }
+              </div> */}
+            </section>
+          </>
+          : "chka"
+      }
     </>
   )
 }
