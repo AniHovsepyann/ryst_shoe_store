@@ -68,13 +68,18 @@ export default function Product() {
         String(product?.review) ?
           <>
             <section className={styles["review-section"]}>
-              <div className="count-and-filter">
+              <div className={styles["review-summary"]}>
+                <div className={styles["average-rate"]}>
+                  <p>Reviews</p>
+                </div>
+                <div className={styles["rate-counts"]}></div>
+              </div>
+              <div className={styles["count-and-filter"]}>
                 <span className={styles.count}>{product.review.length} review</span>
                 <div className={styles.sorts}>
-
                 </div>
               </div>
-              <Reviews reviews={product.review}/>
+              <Reviews reviews={product.review} />
               {/* <div className={styles.reviews}>
               {
                 product.review.map((elm, ind, arr) => {

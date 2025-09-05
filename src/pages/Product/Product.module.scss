@@ -66,15 +66,23 @@
   padding-inline: 24px;
 
   .count-and-filter {
+    margin-bottom: 22.9px;
+
     .count {}
 
     .sorts {}
   }
 
-  .reviews {
-   
+  .review-summary {
+    display: flex;
+    justify-content: space-between;
 
+    .average-rate {}
+
+    .rate-counts {}
   }
+
+  .reviews {}
 }
 
 .product-data-in-slider {
