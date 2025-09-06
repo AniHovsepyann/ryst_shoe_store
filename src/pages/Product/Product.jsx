@@ -7,6 +7,9 @@ import Reviews from './ReviewSlider/ReviewSlider';
 export default function Product() {
   const product = useLoaderData()
   console.log(product);
+  const averageRate = product.review.reduce((sum, review) => sum + Number(review.rate), 0) / product.review.length;
+  console.log("averageRate:", averageRate);
+
 
   return (
     <>
@@ -70,9 +73,50 @@ export default function Product() {
             <section className={styles["review-section"]}>
               <div className={styles["review-summary"]}>
                 <div className={styles["average-rate"]}>
-                  <p>Reviews</p>
+                  <h3>Reviews</h3>
+                  <div className={styles.stars}>star {averageRate.toFixed(1)}</div>
+                  <p>Based on {product.review.length} reviews</p>
+                  <button>Leave a Review</button>
                 </div>
-                <div className={styles["rate-counts"]}></div>
+                {/* <div className={styles["rate-counts"]}>
+                  {[5, 4, 3, 2, 1].map(star => {
+                    const count = product.review.filter(r => Number(r.rate) === star).length;
+                    const percent = (count / product.review.length) * 100;
+
+                    return (
+                      <div key={star} className={styles["rating-row"]}>
+                        <span>{star} stars</span>
+                        <div className={styles.bar}>
+                          <div
+                            className={styles.fill}
+                            style={{ width: `${percent}%` }}
+                          ></div>
+                        </div>
+                        <span>{count}</span>
+                      </div>
+                    );
+                  })}
+                </div> */}
+                <div className={styles["rate-counts"]}>
+                  {[5, 4, 3, 2, 1].map(star => {
+                    const count = product.review.filter(r => Number(r.rate) === star).length;
+                    const percent = (count / product.review.length) * 100;
+
+                    return (
+                      <div key={star} className={styles["rating-row"]}>
+                        <span>{star} stars</span>
+                        <div className={styles.bar}>
+                          <div
+                            className={styles.fill}
+                            style={{ width: `${percent}%` }}
+                          ></div>
+                        </div>
+                        <span>{count}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+
               </div>
               <div className={styles["count-and-filter"]}>
                 <span className={styles.count}>{product.review.length} review</span>
