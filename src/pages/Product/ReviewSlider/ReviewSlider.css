@@ -2,9 +2,26 @@
   justify-content: start;
   margin-bottom: 139px;
 
+  .slick-slider {
+    .slick-dots {
+      display: none !important;
+    }
+
+  }
+
   .slick-arrow {
+    top: 120%;
+
     &::before {
       color: #000;
+    }
+
+    &.slick-prev {
+      left: 48%;
+    }
+
+    &.slick-next {
+      right: 48%;
     }
   }
 
@@ -38,7 +55,7 @@
           display: flex;
           gap: 6px;
 
-          .gray-star{
+          .gray-star {
             /* fill: gray; */
           }
         }
