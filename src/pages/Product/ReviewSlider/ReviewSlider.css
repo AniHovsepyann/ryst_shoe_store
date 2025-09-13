@@ -11,17 +11,30 @@
 
   .slick-arrow {
     top: 120%;
+    width: unset;
+    height: unset;
 
     &::before {
       color: #000;
+      font-family: unset;
+      /* opacity: 1; */
+      /* background-color: #000; */
     }
 
     &.slick-prev {
-      left: 48%;
+      left: 45%;
+
+      &::before {
+        content: '❮ Previous';
+      }
     }
 
     &.slick-next {
-      right: 48%;
+      right: 45%;
+
+      &::before {
+        content: 'Next ❯';
+      }
     }
   }
 
@@ -31,6 +44,9 @@
 
     .slick-slide {
       /* width: 200px; */
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
 
       .slider-each-review {
         border-radius: 8px;

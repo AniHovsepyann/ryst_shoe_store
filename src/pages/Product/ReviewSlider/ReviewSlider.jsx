@@ -7,7 +7,9 @@ export default function Reviews({ reviews }) {
     infinite: true,
     speed: 500,
     slidesToShow: 2,
-    slidesToScroll: 2
+    slidesToScroll: 2,
+    rows: 2,
+    slidesPerRow: 1
   };
   return (
     <div className="slider-container-review">
