@@ -73,9 +73,25 @@ export default function Product() {
             <section className={styles["review-section"]}>
               <div className={styles["review-summary"]}>
                 <div className={styles["average-rate"]}>
-                  <h3>Reviews</h3>
-                  <div className={styles.stars}>star {averageRate.toFixed(1)}</div>
-                  <p>Based on {product.review.length} reviews</p>
+                  <div className={styles["top"]}>
+                    <h3>Reviews</h3>
+                    <div className={styles.stars}>
+                      <div className={styles.icons}>
+                        {[1, 2, 3, 4, 5].map((star, index) => {
+                          let iconClass = "bi bi-star fs-3"; // դատարկ աստղ
+                          if (averageRate >= star) {
+                            iconClass = "bi bi-star-fill fs-3"; // ամբողջ աստղ
+                          } else if (averageRate > star - 1 && averageRate < star) {
+                            iconClass = "bi bi-star-half fs-3"; // կես աստղ
+                          }
+                          return <i key={index} className={iconClass}></i>;
+                        })}
+
+                      </div>
+
+                      {averageRate.toFixed(1)}</div>
+                    <p>Based on {product.review.length} reviews</p>
+                  </div>
                   <button>Leave a Review</button>
                 </div>
                 {/* <div className={styles["rate-counts"]}>

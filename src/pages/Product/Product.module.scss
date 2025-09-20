@@ -76,13 +76,29 @@
   .review-summary {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 42px;
 
     .average-rate {
-      h3 {}
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      .stars {}
+      .top {
+        h3 {}
 
-      p {}
+        .stars {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          .icons {
+            display: flex;
+            gap: 10px;
+          }
+        }
+
+        p {}
+      }
 
       button {
         padding: 10px 80.594px;
@@ -94,14 +110,15 @@
     .rate-counts {
       display: flex;
       flex-direction: column;
+      gap: 16px;
 
       .rating-row {
         display: flex;
         align-items: center;
         gap: 8px;
-        margin-bottom: 6px;
-        font-size: 14px;
-        width: 250px; // որ progress bar-ը երևա նորմալ
+        // margin-bottom: 6px;
+        font-size: 12px;
+        width: 420px; // որ progress bar-ը երևա նորմալ
       }
 
       .bar {
