@@ -32,6 +32,7 @@
       .data-name {
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
 
         span {
           font-size: 12px;
@@ -100,10 +101,19 @@
         p {}
       }
 
-      button {
+      button.leave-review {
         padding: 10px 80.594px;
         border-radius: 25px;
         background-color: transparent;
+        cursor: pointer;
+        border: 1px solid #000;
+        transition: .3s ease-in-out;
+        font-size: 13.3333px;
+
+        &:hover {
+          color: colors.$yellow;
+          background-color: #000;
+        }
       }
     }
 
